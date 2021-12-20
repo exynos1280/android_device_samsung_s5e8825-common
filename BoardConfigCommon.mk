@@ -19,7 +19,7 @@ COMMON_PATH := device/samsung/s5e8825-common
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a55
 
 # ART
 ART_BUILD_TARGET_NDEBUG := true
