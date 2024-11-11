@@ -12,6 +12,7 @@
 #include "LockoutTracker.h"
 #include "Session.h"
 #include "UdfpsHandler.h"
+#include "OpticalUdfps.h"
 
 using ::aidl::android::hardware::biometrics::fingerprint::ISession;
 using ::aidl::android::hardware::biometrics::fingerprint::ISessionCallback;
@@ -39,6 +40,7 @@ class Fingerprint : public BnFingerprint {
     LegacyHAL mHal;
     LockoutTracker mLockoutTracker;
     FingerprintSensorType mSensorType;
+    std::unique_ptr<OpticalUdfps> mOpticalUdfps;  // Unique pointer for conditional initialization
     int mMaxEnrollmentsPerUser;
     bool mSupportsGestures;
     int uinputFd;

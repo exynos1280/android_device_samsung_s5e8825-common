@@ -6,6 +6,7 @@
 
 #include "Fingerprint.h"
 #include "VendorConstants.h"
+#include "OpticalUdfps.h"
 
 #include <fingerprint.sysprop.h>
 
@@ -71,6 +72,11 @@ Fingerprint::Fingerprint() {
         LOG(INFO) << "UdfpsHandler initialized for udfps sensor";
         std::string fod_rect = FingerprintHalProperties::rectangular_sensor_location().value_or("");
         mUdfpsHandler->setFodRect(fod_rect);
+    }
+
+    if (sensorTypeProp == "udfps_optical") {
+        mOpticalUdfps = std::make_unique<OpticalUdfps>();
+        LOG(INFO) << "Optical UDFPS initialized for FOD";
     }
 
     if (mSupportsGestures) {
