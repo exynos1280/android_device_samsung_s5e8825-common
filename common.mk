@@ -271,9 +271,6 @@ PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/ril/sehradiomanager.conf:$(TARGET_C
 # Samsung DAP
 PRODUCT_PACKAGES += SamsungDAP-custom
 
-# Samsung Doze
-PRODUCT_PACKAGES += SamsungDoze
-
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.samsung-multihal \
