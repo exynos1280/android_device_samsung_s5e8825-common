@@ -1448,9 +1448,6 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/swappiness 130
     write /sys/module/zram/parameters/zram_balance_ratio 30
 
-    # Stop statsd
-    stop statsd
-
     # Create carrier folder for HiddenMenu
     mkdir /efs/carrier 0755 radio system
     chown radio system /efs/carrier
