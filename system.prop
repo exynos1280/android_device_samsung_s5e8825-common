@@ -7,6 +7,10 @@ dalvik.vm.image-dex2oat-threads=6
 # Pre-Rendering
 ro.vendor.perf.scroll_opt=true
 
+# Pixel props
+persist.sys.pihooks.disable.gms_key_attestation_block=1
+persist.sys.pixelprops.pi=false
+
 # Vsync
 debug.cpurend.vsync=false
 
