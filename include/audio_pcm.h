@@ -46,6 +46,9 @@
 // Capture devices
 #define SOUND_DEVICE_VIRT_PRIMARY_CAPTURE       20       // primary capture virtual device
 
+#define SOUND_DEVICE_CALL_RX                    104      // WDMA for Call RX
+#define SOUND_DEVICE_CALL_TX                    113      // WDMA for Call TX
+
 #define SOUND_DEVICE_CALL_RECORD                115      // WDMA for Call Recording
 //FIXME: Check below node numbers again
 #define SOUND_DEVICE_VIRT_FM_RECORD             114      // WDMA for FM Radio Recording
@@ -265,7 +268,7 @@ struct pcm_config pcm_config_deep_playback_suhqa = {
 
 // PCM Configurations for Voice RX Playback Stream
 #define VRX_PLAYBACK_CARD               SOUND_CARD0
-#define VRX_PLAYBACK_DEVICE             SOUND_DEVICE_ABOX_RDMA4
+#define VRX_PLAYBACK_DEVICE             SOUND_DEVICE_CALL_RX
 
 #define VRX_PLAYBACK_CHANNELS           DEFAULT_VOICE_CHANNELS
 #define VRX_PLAYBACK_SAMPLING_RATE      DEFAULT_VOICE_SAMPLING_RATE
@@ -507,7 +510,7 @@ struct pcm_config pcm_config_mmap_capture = {
 
 // PCM Configurations for Voice TX Capture Stream
 #define VTX_CAPTURE_CARD                SOUND_CARD0
-#define VTX_CAPTURE_DEVICE              SOUND_DEVICE_ABOX_RDMA10
+#define VTX_CAPTURE_DEVICE              SOUND_DEVICE_CALL_TX
 
 #define VTX_CAPTURE_CHANNELS            DEFAULT_VOICE_CHANNELS
 #define VTX_CAPTURE_SAMPLING_RATE       DEFAULT_VOICE_SAMPLING_RATE
