@@ -180,21 +180,8 @@ PRODUCT_PACKAGES += toolbox.vendor_ramdisk
 # Libinit
 $(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH)/configs/init/libinit:libinit_s5e8825)
 
-# Lineage Health
-PRODUCT_PACKAGES += vendor.lineage.health-service.default
-
-$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/charging_enabled)
-$(call soong_config_set,lineage_health,fast_charge_node,/sys/class/sec/switch/afc_disable)
-$(call soong_config_set,lineage_health,fast_charge_value_none,1)
-$(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
-
 # Linker
 PRODUCT_PACKAGES += public.libraries.txt
-
-# Live Display
-ifneq ($(TARGET_DEVICE),m33x)
-PRODUCT_PACKAGES += vendor.lineage.livedisplay-service.samsung-exynos
-endif
 
 # Log Tag
 include $(COMMON_PATH)/configs/vendor_logtag.mk
@@ -289,12 +276,6 @@ PRODUCT_PACKAGES += sehradiomanager.conf
 # RIL - Init
 PRODUCT_PACKAGES += init.s5e8825.ril.rc
 
-# Samsung DAP
-PRODUCT_PACKAGES += SamsungDAP-custom
-
-# Samsung Doze
-PRODUCT_PACKAGES += SamsungDoze
-
 # Sensors
 PRODUCT_PACKAGES += android.hardware.sensors-service.samsung-multihal
 
@@ -311,16 +292,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung_slsi-linaro/exynos/cpboot_v3 \
     hardware/samsung_slsi/libbt
 
-# SpeakerFX
-ifneq ($(wildcard packages/apps/SpeakerFX),)
-PRODUCT_PACKAGES += SpeakerFX
-endif
-
 # Thermal
 PRODUCT_PACKAGES += btcon.json
-
-# Touch HAL
-PRODUCT_PACKAGES += vendor.lineage.touch-service.samsung
 
 # Updater
 AB_OTA_UPDATER := false
@@ -351,6 +324,3 @@ PRODUCT_PACKAGES += \
 
 # Wi-Fi - Init
 PRODUCT_PACKAGES += init.s5e8825.wifi.rc
-
-# Vibrator
-PRODUCT_PACKAGES += android.hardware.vibrator-service.samsung
