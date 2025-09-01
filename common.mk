@@ -197,7 +197,7 @@ $(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
 PRODUCT_PACKAGES += public.libraries.txt
 
 # Live Display
-PRODUCT_PACKAGES += vendor.lineage.livedisplay@2.0-service.samsung-exynos
+PRODUCT_PACKAGES += vendor.lineage.livedisplay-service.samsung-exynos
 
 # Log Tag
 include $(COMMON_PATH)/configs/vendor_logtag.mk
