@@ -65,9 +65,6 @@ on early-boot
     write /config/usb_gadget/g1/functions/ncm.gs9/os_desc/interface.ncm/compatible_id WINNCM
     write /config/usb_gadget/g1/functions/ncm.gs9/ifname ncm%d
 
-    # mass_storage function
-    mkdir /config/usb_gadget/g1/functions/mass_storage.0
-
     # Set permissions
     chown system system /config/usb_gadget/
     chown system system /config/usb_gadget/g1
@@ -130,9 +127,6 @@ on early-boot
     chown system system /config/usb_gadget/g1/functions/rndis.gs4/protocol
     chown system system /config/usb_gadget/g1/functions/rndis.gs4/qmult
     chown system system /config/usb_gadget/g1/functions/rndis.gs4/subclass
-    chown system system /config/usb_gadget/g1/functions/mass_storage.0
-    chown system system /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file
-    chmod 0660 /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file
     chown system system /config/usb_gadget/g1/idProduct
     chown system system /config/usb_gadget/g1/idVendor
     chown system system /config/usb_gadget/g1/max_speed
