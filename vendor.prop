@@ -33,6 +33,7 @@ bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 
 # Camera
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram
 vendor.camera.aux.packagelist=org.lineageos.aperture,com.android.camera
 
 # Codec2
@@ -79,10 +80,6 @@ persist.sys.fuse.passthrough.enable=true
 # Incremental FS
 ro.incremental.enable=true
 
-# Logs
-persist.log.tag.QC2Buf=W
-persist.log.tag.QC2V4l2Codec=E
-
 # LMK
 ro.lmk.filecache_min_kb=153600
 ro.lmk.kill_timeout_ms=50
@@ -113,6 +110,9 @@ vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
 # Samsung specific
 ro.product_ship=true
 ro.vendor.cscsupported=1
+
+# Sensors
+persist.vendor.sensors.debug.hal=0
 
 # Soc
 ro.soc.manufacturer=Samsung

@@ -287,3 +287,6 @@
 
 # NFC
 /dev/st21nfc              0660   nfc        nfc
+
+# EMS
+/dev/ems            0660   system     system

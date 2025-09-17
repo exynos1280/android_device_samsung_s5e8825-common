@@ -4,24 +4,6 @@ dalvik.vm.dex2oat-threads=6
 dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
 dalvik.vm.image-dex2oat-threads=6
 
-# Logs
-persist.log.tag.artd=S
-persist.log.tag.AnalyticsService=S
-persist.log.tag.ArtService=s
-persist.log.tag.b/223498680=S
-persist.log.tag.CompatibilityChangeReporter=S
-persist.log.tag.ContrastColorUtil=S
-persist.log.tag.gralloc4=S
-persist.log.tag.GRALLOC=S
-persist.log.tag.HWUI=S
-persist.log.tag.IntervalStats=S
-persist.log.tag.KernelCpuUidActiveTimeReader=S
-persist.log.tag.NearbySharing=S
-persist.log.tag.SQLiteLog=S
-persist.log.tag.Tracer=S
-persist.log.tag.TrafficStats=S
-persist.log.tag.wificond=S
-
 # Pre-Rendering
 ro.vendor.perf.scroll_opt=true
 

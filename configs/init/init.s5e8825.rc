@@ -137,9 +137,6 @@ on init
     copy /dev/cpuset/mems /dev/cpuset/foreground-boost/mems
     write /dev/cpuset/foreground-boost/cpus 0-7
 
-    # Set property for boost-optimize
-    setprop sys.perf.boostopt true
-
     # EPIC interfaces
     chmod 660 /dev/stune/top-app/schedtune.boost
     chown system system /dev/mode
