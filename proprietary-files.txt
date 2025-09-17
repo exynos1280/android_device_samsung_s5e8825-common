@@ -102,19 +102,18 @@ vendor/firmware/secure_configuration.flm.cfg.bin
 # Gatekeeper
 vendor/lib64/hw/gatekeeper.s5e8825.so
 
-# GPS
-vendor/bin/hw/gps.sh
-vendor/bin/hw/gpsd
-vendor/bin/hw/vendor.samsung.hardware.gnss@2.1-service
-vendor/etc/gnss/ca.pem
-vendor/etc/gnss/gps.cfg
-vendor/etc/init/init.gps.rc
-vendor/etc/init/vendor.samsung.hardware.gnss@2.1-service.rc
-vendor/lib64/hw/android.hardware.gnss@2.1-impl.so;FIX_SONAME
-vendor/lib64/hw/vendor.samsung.hardware.gnss@2.1-impl.so;FIX_SONAME
-vendor/lib64/libwrappergps.so
-vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
-vendor/lib64/vendor.samsung.hardware.gnss@2.1.so
+# GPS - from a14x - A146BXXS9DYH1
+vendor/bin/hw/gps.sh|7ca4f91c897c166ba9c816de84fbb6f260fedb9d
+vendor/bin/hw/vendor.samsung.hardware.gnss-service|4274242c221cc79161f3ba5becbdd1bf53ab4031
+vendor/etc/gnss/ca.pem|3a141deb8f22f2f08fac512ede7927e0112dfda1
+vendor/etc/gnss/deleteLogCommands|a674337c6f508189bf80d6909c2a54d909e2c5bf
+vendor/etc/gnss/gps.cfg|9a6f44d8fd306d2f011c47025432cfded348fc3b
+vendor/etc/gnss/gps.debug.cfg|67d74ace680fb9b7d30e81ce23ca0cc365a42836
+vendor/etc/gnss/gps.issuetracker.cfg|539d359c57309a5d5cb450ff808115a37df3cc3c
+vendor/etc/gnss/hardware_factors.conf|c246d1f9f9bd2cd810768fdda3918730f3cecf8c
+vendor/etc/init/init.gps.rc|000325a25d751565abf623e72586bda7edf3da93
+vendor/etc/init/vendor.samsung.hardware.gnss-service.rc|b73956f7dcd835381be837be7f46a71f38eb6d6d
+vendor/lib64/vendor.samsung.hardware.gnss-V3-ndk.so|b73dac6f100d305d9673dc0040bba075aee62710
 
 # Graphics - from a54x - A546BXXUCDYDB
 vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so,vendor/lib64/libOpenCL.so.1,vendor/lib64/libOpenCL.so.1.1|c4e937bddd63787f391ec52ea453c9c8b4a41834
