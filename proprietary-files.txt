@@ -131,7 +131,6 @@ vendor/etc/plmn_se13_prebuilt.bin
 
 # RIL - from a54x - A546BXXSFDYI1
 vendor/bin/hw/rild|249bd469620af395bcca58153d40cee6c28bdcb5
-vendor/bin/secril_config_svc|ba776141eca41ece50b460ecc7d57c92c4fe69df
 vendor/etc/init/cass.rc|965838732854fc12d687fde4cd407e876047e592
 vendor/etc/init/vendor.samsung.rilchip.slsi.rc|9ab6b924d2f5ae56a408a55d67c142e7082a00e0
 vendor/etc/init/vendor.samsung.rild.rc|a4cc7e6d99aa026b4dc438d73b260d4143ae26b6
