@@ -1,6 +1,6 @@
 # Common proprietary files - from Samsung package version A536BXXSHFYH1 unless pinned
 
-# Audio - from a14xxx - A146BXXU8DYF4
+# Audio - from a14x - A146BXXS9DYH1
 vendor/bin/hw/secaudiohalaidl|f1f0c148e44e90c26be01e67cc45eb05b2190fc5
 vendor/etc/init/secaudiohalaidl.rc|e22b21a141167847a570c9f5c5a7dd8b622ab8ef
 vendor/etc/vintf/manifest/secaudiohalaidl_manifest.xml|e6ba4246996de00f7dffca081520f344c9a430a8
@@ -40,8 +40,8 @@ vendor/etc/dolby/dax-default.xml
 vendor/lib64/libprofileparamstorage.so
 vendor/lib64/libspatializerparamstorage.so
 
-# Audio - Dolby Atmos - from a55x - A556EXXS5AXI4
-vendor/lib64/soundfx/libswdap.so|f50929bb7b17babd5c7758f40f53d6651c252aa2|3df9488370c0ccf8facbd8d5ffdb8d7f6fccd90f
+# Audio - Dolby Atmos - from a55x - A556EXXSABYH4
+vendor/lib64/soundfx/libswdap.so|a223aafe58e642a2ac228e47898c9bc3b7618c45|97d83696641804fa58e745acab2ce051cc47bec7
 
 # Audio - Firmware
 vendor/firmware/APSV_AUDIO_SLSI.bin
@@ -116,8 +116,8 @@ vendor/lib64/libwrappergps.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.1.so
 
-# Graphics - from a54x - A546BXXUCDYDB
-vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so,vendor/lib64/libOpenCL.so.1,vendor/lib64/libOpenCL.so.1.1|c4e937bddd63787f391ec52ea453c9c8b4a41834
+# Graphics - from a54x - A546BXXSFDYI1
+vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so,vendor/lib64/libOpenCL.so.1,vendor/lib64/libOpenCL.so.1.1|d4bd90eef31afc3d30464461b49fb2fb78d73ec6
 vendor/lib64/hw/vulkan.mali.so|8d5c6634ec83b9d1940eb8327e2d84a2c3c6da56
 
 # Keymint
@@ -149,7 +149,7 @@ vendor/lib64/libfloatingfeature.so
 vendor/lib64/libvkmanager_vendor.so
 vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
 
-# RIL - from a54x - A546BXXSDDYF1
+# RIL - from a54x - A546BXXSFDYI1
 vendor/bin/hw/rild|249bd469620af395bcca58153d40cee6c28bdcb5
 vendor/etc/init/vendor.samsung.rilchip.slsi.rc|9ab6b924d2f5ae56a408a55d67c142e7082a00e0
 vendor/etc/init/vendor.samsung.rild.rc|a4cc7e6d99aa026b4dc438d73b260d4143ae26b6

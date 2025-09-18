@@ -28,18 +28,9 @@ import org.lineageos.dap.DolbyFragment.Companion.PREF_DOLBY_MODES
 class BootCompletedReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-        val migratedFlag = "MIGRATED_TO_PER_DEVICE_PREFS"
-        if (!prefs.getBoolean(migratedFlag, false)) {
-            // Enable Dolby for speaker by default on first boot after update
-            prefs.edit()
-                .putBoolean("enabled_speaker", true)
-                .putInt("profile_speaker", DolbyCore.PROFILE_AUTO)
-                .putBoolean(migratedFlag, true)
-                .apply()
-        }
         // Restore per-device state for all known device types
         for (device in DolbyCore.OutputDevice.values()) {
+            val prefs = PreferenceManager.getDefaultSharedPreferences(context)
             val profileKey = "profile_${device.key}"
             val enabledKey = "enabled_${device.key}"
             // If not set, skip
