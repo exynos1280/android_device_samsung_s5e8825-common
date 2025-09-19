@@ -131,6 +131,9 @@
 /vendor/etc/secnvm(/.*)?     u:object_r:secnvm_vendor_etc_file:s0
 
 ## Services
+# Custom health HAL
+/vendor/bin/hw/android\.hardware\.health-service\.s5e8825     u:object_r:hal_health_default_exec:s0
+
 # Audio
 /vendor/bin/hw/secaudiohalaidl                                u:object_r:hal_audio_default_exec:s0
 
