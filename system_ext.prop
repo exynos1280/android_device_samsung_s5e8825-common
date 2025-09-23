@@ -1,2 +1,6 @@
+# ART
+dalvik.vm.minidebuginfo=false
+dalvik.vm.dex2oat-minidebuginfo=false
+
 # Display
 debug.sf.enable_hwc_vds=0

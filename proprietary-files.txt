@@ -1,4 +1,4 @@
-# Common proprietary files - from Samsung package version A536BXXSHFYH1 unless pinned
+# Common proprietary files - from Samsung package version A536BXXSHFYI1 unless pinned
 
 # Audio - from a14x - A146BXXS9DYH1
 vendor/bin/hw/secaudiohalaidl|f1f0c148e44e90c26be01e67cc45eb05b2190fc5
@@ -137,7 +137,6 @@ vendor/etc/init/pa_daemon_teegris.rc
 vendor/bin/cass
 vendor/bin/secril_config_svc
 vendor/etc/init/cass.rc
-vendor/etc/init/init.baseband.rc
 vendor/etc/plmn_delta.bin
 vendor/etc/plmn_delta_chn.bin
 vendor/etc/plmn_delta_hktw.bin

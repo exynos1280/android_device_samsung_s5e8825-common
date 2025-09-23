@@ -84,8 +84,8 @@ static const variant_info_t a53xnsxx = {
     .device = "a53x",
     .model = "SM-A536E",
     .name = "a53xnsxx",
-    .build_fingerprint = "samsung/a53xnsxx/essi:15/AP3A.240905.015.A2/A536EXXSHFYH2:user/release-keys",
-    .build_desc = "a53xnsxx-user 15 AP3A.240905.015.A2 A536EXXSHFYH2 release-keys"
+    .build_fingerprint = "samsung/a53xnsxx/essi:15/AP3A.240905.015.A2/A536EXXSHFYI4:user/release-keys",
+    .build_desc = "a53xnsxx-user 15 AP3A.240905.015.A2 A536EXXSHFYI4 release-keys"
 };
 
 static const variant_info_t a53xzc = {

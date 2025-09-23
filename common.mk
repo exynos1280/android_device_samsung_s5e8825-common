@@ -155,8 +155,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/fstab.s5e8825:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.s5e8825 \
     $(COMMON_PATH)/configs/init/init.s5e8825.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e8825.rc \
     $(COMMON_PATH)/configs/init/init.s5e8825.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e8825.usb.rc \
+    $(COMMON_PATH)/configs/init/init.baseband.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.baseband.rc \
     $(COMMON_PATH)/configs/init/init.recovery.s5e8825.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.s5e8825.rc \
-    $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.samsung.rc \
     $(COMMON_PATH)/configs/init/init.fingerprint.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.fingerprint.rc \
     $(COMMON_PATH)/configs/init/init.ril.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.ril.rc \
     $(COMMON_PATH)/configs/init/init.wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wifi.rc \
@@ -227,6 +227,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.front.prebuilt.xml \
     android.hardware.camera.full.prebuilt.xml \
     android.hardware.camera.raw.prebuilt.xml \
+    android.hardware.ethernet.prebuilt.xml \
     android.hardware.location.gps.prebuilt.xml \
     android.hardware.nfc.hce.prebuilt.xml \
     android.hardware.nfc.prebuilt.xml \
@@ -261,12 +262,11 @@ PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGE
 # RIL
 PRODUCT_PACKAGES += \
     cbd \
-    secril_config_svc \
     sehradiomanager
 
-$(call soong_config_set,cbd,protocol,sipc)
-
 PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/ril/sehradiomanager.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sehradiomanager.conf
+
+$(call soong_config_set,cbd,protocol,sipc)
 
 # Samsung DAP
 PRODUCT_PACKAGES += SamsungDAP-custom

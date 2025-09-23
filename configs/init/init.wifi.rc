@@ -46,7 +46,5 @@ on post-fs-data
     chown wifi wifi /sys/wifi/dump_in_progress
     chmod 0660 /sys/wifi/dump_in_progress
 
-    start macloader
-
 on boot
     setprop wifi.interface wlan0
