@@ -4,10 +4,10 @@
 vendor/bin/hw/secaudiohalaidl|f1f0c148e44e90c26be01e67cc45eb05b2190fc5
 vendor/etc/init/secaudiohalaidl.rc|e22b21a141167847a570c9f5c5a7dd8b622ab8ef
 vendor/etc/vintf/manifest/secaudiohalaidl_manifest.xml|e6ba4246996de00f7dffca081520f344c9a430a8
+vendor/etc/SoundBoosterParam.txt|0e7cc535a91e2841f2402277c5513687323ea076
 vendor/etc/mixer_usb_default.xml|fa60c6ec41a31d84935c006515322edb1b4cc0c2
 vendor/etc/mixer_usb_gray.xml|a08648ea579c4dd1b25c676f1523c813f6cfdf61
 vendor/etc/mixer_usb_white.xml|4d69d830f29c8765bfb18ca83d45be38295ae85f
-vendor/etc/SoundBoosterParam.txt|0e7cc535a91e2841f2402277c5513687323ea076
 vendor/etc/sec_audio_volume_curve.xml|e689487098c8317db2d0e593e8fb281e92860cb9
 vendor/etc/usb_audio_policy_configuration.xml|1123a3a29c1fd176d14417861dbf51ee893ef523
 vendor/lib64/hw/audio.primary.s5e8535.so:vendor/lib64/hw/audio.primary.s5e8825.so;FIX_SONAME|a1f545044aada7e41872ba1a821ef04ae0387a51|12792b200dd8d5e2030c420e6e86905265da1e56
@@ -72,11 +72,11 @@ vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_performance.xml
 vendor/etc/media_profiles_V1_0.xml
 
-# DRM Widevine
-vendor/bin/hw/android.hardware.drm@1.4-service.widevine
-vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
-vendor/lib64/libwvhidl.so
+# DRM Widevine - from a54x - A546BXXSFDYI1
+vendor/bin/hw/android.hardware.drm-service.widevine|8067253631a71e2ad01abb33cbc9257eda611ad2
+vendor/etc/init/android.hardware.drm-service.widevine.rc|54c79ef531c9c135fa234a8515b3d37f0e1ccc4d
+vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml|7e13b6628572b1cdd76351b744e2805d4e6f2dd9
+vendor/lib64/libwvaidl.so|c736b77f5d065cc03de9e5bbb20c26b6cced8710
 
 # EPIC
 vendor/bin/epic
@@ -184,17 +184,17 @@ vendor/etc/init/teegris_v4.rc
 vendor/lib64/libteecl.so
 vendor/lib64/libuuid.so;MODULE_SUFFIX=_vendor
 
-# Thermal
-vendor/etc/btcon.json
-
 # WiFi
 vendor/etc/init/wifi_slsi.rc
 vendor/etc/wifi/mx140.bin
 vendor/etc/wifi/mx140_t.bin
 vendor/etc/wifi/mx140_t_common.hcf
 
-# Vaultkeeper
-vendor/etc/init/vaultkeeper_common.rc
+# Vaultkeeper - from a25x - A256EXXS8CYG3
+vendor/bin/vaultkeeperd|64bf000e4d58c43a1f23220e5b07a8bc4e37a951|b662faa8b5180ad4a3756310e21c7194b38634b5
+vendor/etc/init/vaultkeeper_common.rc|5fa623fe813eaf19b658257ce9fea94ba8acd1f4
+vendor/lib64/libstork_shared.so|a141efe0b67d1ad8252dfa9780e65e4ad64656f6
+vendor/lib64/libvkservice.so|85fcac9c71a05af9792adb99992acace44e27a60|fe537335d588530413f841dbed70e36bdec8b370
 
 # VNDK - from prebuilts/vndk/v33 - android-15.0.0_r32
 vendor/lib64/libcrypto-tm.so;FIX_SONAME|7291c0e41fa86b3739df0c0c20de21e88f43661a|f53b9d897921ade77c511eb98955db374fcc5c69

@@ -1,0 +1,1 @@
+allow untrusted_app hal_drm_widevine_service:service_manager find;

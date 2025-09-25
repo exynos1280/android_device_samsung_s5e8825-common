@@ -14,6 +14,9 @@
 # Camera
 /dev/m2m1shot_scaler0                        u:object_r:m2m1shot_device:s0
 
+# DRM Widevine
+/vendor/bin/hw/android\.hardware\.drm-service\.widevine u:object_r:hal_drm_widevine_exec:s0
+
 # EPIC HAL
 /vendor/bin/epic                                                    u:object_r:epicd_exec:s0
 /vendor/bin/hw/vendor\.samsung_slsi\.hardware\.epic@1\.0-service    u:object_r:hal_vendor_epic_service_default_exec:s0
@@ -135,4 +138,3 @@
 
 # Vaultkeeper
 /vendor/bin/vaultkeeperd                                                        u:object_r:vaultkeeperd_exec:s0
-/vendor/bin/vendor\.samsung\.hardware\.security\.vaultkeeper@2\.0-service       u:object_r:vaultkeeperd_exec:s0

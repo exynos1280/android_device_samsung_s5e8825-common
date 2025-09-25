@@ -14,6 +14,7 @@ allow init st21nfc_device:chr_file { ioctl open read write };
 allow init k250a_device:chr_file { create setattr unlink };
 
 allow init vendor_file:dir mounton;
+allow init servicemanager:binder { call transfer };
 
 allow init vendor_firmware_file:file mounton;
 

@@ -83,8 +83,6 @@ blob_fixups: blob_fixups_user_type = {
     #                  '80 0E 40 F9 E1 03 16 AA 82 0C 80 52 03 00 80 D2'),
     'vendor/lib64/libVendorSemTelephonyProps.so': blob_fixup()
         .binary_regex_replace(rb'persist\.ril\.supportNrModefromCp', b'vendor.ril.supportNrModefromCp\x00'),
-    'vendor/lib64/libvkmanager_vendor.so': blob_fixup()
-        .binary_regex_replace(rb'ro\.factory\.factory_binary', b'ro.vendor.factory_binary\x00'),
     # Sensors
     'vendor/lib64/libsensorlistener.so': blob_fixup()
         .add_needed('libshim_sensorndkbridge.so'),
@@ -96,6 +94,13 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libutils-v32.so')
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim')
         .remove_needed('libhidltransport.so'),
+    # Vaultkeeper
+    (
+        'vendor/bin/vaultkeeperd',
+        'vendor/lib64/libvkmanager_vendor.so',
+        'vendor/lib64/libvkservice.so',
+    ): blob_fixup()
+        .binary_regex_replace(rb'ro\.factory\.factory_binary', b'ro.vendor.factory_binary\x00'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

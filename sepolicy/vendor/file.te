@@ -33,3 +33,7 @@ type migov_file, fs_type, sysfs_type;
 
 # Weaver firmware
 type secnvm_vendor_etc_file, file_type, vendor_file_type;
+
+# DRM Widevine
+type hal_drm_widevine_service, service_manager_type;
+type mediadrm, service_manager_type;
