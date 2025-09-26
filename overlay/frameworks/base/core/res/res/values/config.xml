@@ -54,6 +54,14 @@
     <!-- If AOD can show an ambient version of the wallpaper -->
     <bool name="config_dozeSupportsAodWallpaper">false</bool>
 
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">500</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">3000</integer>
+
     <!-- Control whether Night display is available. This should only be enabled on devices
          that have a HWC implementation that can apply the matrix passed to setColorTransform
          without impacting power, performance, and app compatibility (e.g. protected content). -->
