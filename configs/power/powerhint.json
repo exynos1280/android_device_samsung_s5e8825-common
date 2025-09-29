@@ -11,6 +11,16 @@
             "ResetOnInit": true
         },
         {
+            "Name": "GPUFreqBoost",
+            "Path": "/dev/gpu_freq_min",
+            "Values": [
+                "806000",
+                "507000",
+                "312000",
+            ],
+            "ResetOnInit": true
+        },
+        {
             "Name": "TABoost",
             "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
             "Values": [
@@ -62,6 +72,12 @@
             "Value": "507000"
         },
         {
+            "PowerHint": "INTERACTION",
+            "Node": "GPUFreqBoost",
+            "Duration": 1000,
+            "Value": "806000"
+        },
+        {
             "PowerHint": "INTERACTIVE",
             "Node": "TouchscreenEnable",
             "Duration": 0,
@@ -74,6 +90,12 @@
             "Value": "1"
         },
         {
+            "PowerHint": "INTERACTIVE",
+            "Node": "GPUFreqBoost",
+            "Duration": 1500,
+            "Value": "806000"
+        },
+        {
             "PowerHint": "DOUBLE_TAP_TO_WAKE",
             "Node": "DoubleTapToWakeEnable",
             "Duration": 0,
@@ -83,6 +105,12 @@
             "PowerHint": "EXPENSIVE_RENDERING",
             "Node": "GPUMinFreq",
             "Duration": 0,
+            "Value": "806000"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "GPUFreqBoost",
+            "Duration": 2000,
             "Value": "806000"
         }
     ]

@@ -32,6 +32,7 @@
 /sys/class/devfreq/19970000\.gpu(/.*)?                              u:object_r:sysfs_gpu:s0
 /sys/kernel/exynos_pm_qos/gpu_freq_min                              u:object_r:sysfs_performance:s0
 /sys/kernel/exynos_pm_qos/gpu_freq_max                              u:object_r:sysfs_performance:s0
+/sys/devices/platform/10300000\.mali/highspeed_(clock|load|delay)   u:object_r:sysfs_performance:s0
 
 # FM Radio
 /dev/radio0                                  u:object_r:fm_device:s0
