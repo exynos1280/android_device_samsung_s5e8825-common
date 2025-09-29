@@ -13,9 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit proprietary files
-include vendor/samsung/s5e8825-common/BoardConfigVendor.mk
-
 COMMON_PATH := device/samsung/s5e8825-common
 
 # Architecture
