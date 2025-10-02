@@ -108,6 +108,9 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl \
     android.hardware.composer.hwc3-service.slsi
 
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := 450dpi
+PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 TARGET_SCREEN_DENSITY := 450
 
 # Dynamic Partitions
@@ -139,10 +142,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service
 
 # Graphics
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 450dpi
-PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
-
 $(call soong_config_set,exynos_hwc,force_client_video,true)
 
 # Health
