@@ -274,9 +274,7 @@ $(call soong_config_set,cbd,protocol,sipc)
 PRODUCT_PACKAGES += sehradiomanager.conf
 
 # RIL - Init
-PRODUCT_PACKAGES += \
-    init.baseband.rc \
-    init.ril.rc
+PRODUCT_PACKAGES += init.ril.rc
 
 # Samsung DAP
 PRODUCT_PACKAGES += SamsungDAP-custom

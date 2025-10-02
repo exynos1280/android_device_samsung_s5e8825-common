@@ -11,13 +11,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.baseband.rc",
-    src: "init.baseband.rc",
-    sub_dir: "init",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.fingerprint.rc",
     src: "init.fingerprint.rc",
     sub_dir: "init",
