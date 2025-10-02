@@ -6,6 +6,7 @@
 
 soong_namespace {
     imports: [
+        "kernel/samsung/s5e8825",
         "vendor/samsung/s5e8825-common",
     ],
 }
