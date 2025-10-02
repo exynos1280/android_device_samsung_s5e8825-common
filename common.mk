@@ -129,9 +129,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += fastbootd
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.s5e8825 \
-    sensors.samsung
+PRODUCT_PACKAGES += android.hardware.biometrics.fingerprint-service.s5e8825
 
 # Fingerprint - Init
 PRODUCT_PACKAGES += init.fingerprint.rc
