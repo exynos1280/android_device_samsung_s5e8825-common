@@ -121,9 +121,9 @@ PRODUCT_PACKAGES += android.hardware.drm-service.clearkey
 
 # EPIC
 PRODUCT_PACKAGES += \
+    libepicoperator \
     vendor.samsung_slsi.hardware.epic@1.0-impl \
-    vendor.samsung_slsi.hardware.epic@1.0-service \
-    libepicoperator
+    vendor.samsung_slsi.hardware.epic@1.0-service
 
 # fastbootd
 PRODUCT_PACKAGES += fastbootd
