@@ -189,7 +189,7 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 include device/lineage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
-# WiFi
+# Wi-Fi
 BOARD_WLAN_DEVICE                := slsi
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_slsi
