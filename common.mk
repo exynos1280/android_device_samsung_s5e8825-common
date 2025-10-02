@@ -283,9 +283,8 @@ PRODUCT_PACKAGES += SamsungDAP-custom
 PRODUCT_PACKAGES += SamsungDoze
 
 # Sensors
-PRODUCT_PACKAGES += \
-    android.hardware.sensors-service.samsung-multihal \
-    libshim_sensorndkbridge
+PRODUCT_PACKAGES += android.hardware.sensors-service.samsung-multihal
+PRODUCT_PACKAGES += libshim_sensorndkbridge
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
