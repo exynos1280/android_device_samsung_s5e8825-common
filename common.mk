@@ -97,7 +97,6 @@ PRODUCT_PACKAGES += \
     codec2.vendor.ext.policy
 
 $(call soong_config_set,openmax,legacy_mfc,true)
-$(call soong_config_set,openmax,USE_CSC_FILTER,true)
 
 # ConfigStore
 PRODUCT_PACKAGES += disable_configstore
