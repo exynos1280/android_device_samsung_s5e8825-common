@@ -61,7 +61,7 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace('08 09 40 f9 00 01 3f d6',
                      '20 00 80 52 1f 20 03 d5'),
     # DRM Widevine
-    'vendor/lib64/libwvhidl.so': blob_fixup()
+    'vendor/lib64/libwvaidl.so': blob_fixup()
         .replace_needed('libprotobuf-cpp-lite-3.9.1.so', 'libprotobuf-cpp-full-3.9.1.so'),
     # libssl
     'vendor/lib64/libssl-tm.so': blob_fixup()

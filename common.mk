@@ -32,18 +32,25 @@ COMMON_PATH := device/samsung/s5e8825-common
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
-    android.hardware.audio.service:64 \
     android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio.service:64 \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
     audio.primary.default \
     audio.r_submix.default \
     audio.usbv2.default
 
+TARGET_EXCLUDES_AUDIOFX := true
+
+$(call soong_config_set,android_hardware_audio,run_64bit,true)
+
+# Audio - Configuration
+PRODUCT_PACKAGES += \
+    audio_effects.xml \
+    audio_policy_configuration.xml \
+    usbv2_audio_policy_configuration.xml
+
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(COMMON_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(COMMON_PATH)/configs/audio/usbv2_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usbv2_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
@@ -52,10 +59,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_default_stream_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_default_stream_volumes.xml \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_product_strategies.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_product_strategies.xml \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_stream_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_stream_volumes.xml
-
-TARGET_EXCLUDES_AUDIOFX := true
-
-$(call soong_config_set,android_hardware_audio,run_64bit,true)
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -68,8 +71,9 @@ PRODUCT_COPY_FILES += \
     hardware/samsung_slsi/libbt/conf/bt_vendor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor.conf
 
 # Camera
+PRODUCT_PACKAGES += android.hardware.camera.provider-service.samsung
+
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider-service.samsung \
     libvpl \
     libshim_camera
 
@@ -92,12 +96,7 @@ PRODUCT_PACKAGES += \
     codec2.vendor.base.policy \
     codec2.vendor.ext.policy
 
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
-    $(COMMON_PATH)/configs/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
-
 $(call soong_config_set,openmax,legacy_mfc,true)
-$(call soong_config_set,openmax,USE_CSC_FILTER,true)
 
 # ConfigStore
 PRODUCT_PACKAGES += disable_configstore
@@ -108,6 +107,9 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl \
     android.hardware.composer.hwc3-service.slsi
 
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := 450dpi
+PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 TARGET_SCREEN_DENSITY := 450
 
 # Dynamic Partitions
@@ -118,28 +120,28 @@ PRODUCT_PACKAGES += android.hardware.drm-service.clearkey
 
 # EPIC
 PRODUCT_PACKAGES += \
+    libepicoperator \
     vendor.samsung_slsi.hardware.epic@1.0-impl \
-    vendor.samsung_slsi.hardware.epic@1.0-service \
-    libepicoperator
+    vendor.samsung_slsi.hardware.epic@1.0-service
 
 # fastbootd
 PRODUCT_PACKAGES += fastbootd
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.s5e8825 \
-    sensors.samsung
+PRODUCT_PACKAGES += android.hardware.biometrics.fingerprint-service.s5e8825
+
+# Fingerprint - Init
+PRODUCT_PACKAGES += init.fingerprint.rc
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \
     android.hardware.gatekeeper@1.0-service
 
-# Graphics
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 450dpi
-PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
+# GPS - Init
+PRODUCT_PACKAGES += init.gps.rc
 
+# Graphics
 $(call soong_config_set,exynos_hwc,force_client_video,true)
 
 # Health
@@ -150,19 +152,12 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set,samsungHealthVars,enable_suspend,false)
 
 # Init
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/fstab.s5e8825:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.s5e8825 \
-    $(COMMON_PATH)/configs/init/fstab.s5e8825:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.s5e8825 \
-    $(COMMON_PATH)/configs/init/init.s5e8825.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e8825.rc \
-    $(COMMON_PATH)/configs/init/init.s5e8825.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e8825.usb.rc \
-    $(COMMON_PATH)/configs/init/init.baseband.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.baseband.rc \
-    $(COMMON_PATH)/configs/init/init.recovery.s5e8825.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.s5e8825.rc \
-    $(COMMON_PATH)/configs/init/init.fingerprint.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.fingerprint.rc \
-    $(COMMON_PATH)/configs/init/init.ril.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.ril.rc \
-    $(COMMON_PATH)/configs/init/init.wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wifi.rc \
-    $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
-
-$(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH):init_s5e8825)
+PRODUCT_PACKAGES += \
+    fstab.s5e8825 \
+    init.s5e8825.rc \
+    init.s5e8825.recovery.rc \
+    init.s5e8825.usb.rc \
+    ueventd.s5e8825.rc
 
 # Kernel
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
@@ -175,6 +170,9 @@ PRODUCT_PACKAGES += toolbox.vendor_ramdisk
 # Keymint
 PRODUCT_PACKAGES += libshim_crypto
 
+# Libinit
+$(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH)/configs/init/libinit:libinit_s5e8825)
+
 # Lineage Health
 PRODUCT_PACKAGES += vendor.lineage.health-service.default
 
@@ -183,20 +181,28 @@ $(call soong_config_set,lineage_health,fast_charge_node,/sys/class/sec/switch/af
 $(call soong_config_set,lineage_health,fast_charge_value_none,1)
 $(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
 
+# Linker
+PRODUCT_PACKAGES += public.libraries.txt
+
 # Live Display
 PRODUCT_PACKAGES += vendor.lineage.livedisplay@2.0-service.samsung-exynos
 
 # Log Tag
-include $(COMMON_PATH)/vendor_logtag.mk
+include $(COMMON_PATH)/configs/vendor_logtag.mk
+
+# Media
+PRODUCT_PACKAGES += \
+    media_codecs_c2.xml \
+    media_codecs_performance_c2.xml
 
 # Memtrack
 PRODUCT_PACKAGES += android.hardware.memtrack-service.samsung-mali
 
 # NFC
 PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
     libnfc-nci \
     libnfc_nci_jni \
-    com.android.nfc_extras \
     Tag
 
 # Overlays
@@ -205,10 +211,10 @@ DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
+    frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml \
     frameworks/native/data/etc/android.hardware.camera.ar.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.ar.xml \
     frameworks/native/data/etc/android.hardware.camera.autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml \
     frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
     frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
@@ -228,14 +234,16 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.full.prebuilt.xml \
     android.hardware.camera.raw.prebuilt.xml \
     android.hardware.ethernet.prebuilt.xml \
+    android.hardware.fingerprint.prebuilt.xml \
     android.hardware.location.gps.prebuilt.xml \
-    android.hardware.nfc.hce.prebuilt.xml \
     android.hardware.nfc.prebuilt.xml \
+    android.hardware.nfc.hce.prebuilt.xml \
     android.hardware.sensor.accelerometer.prebuilt.xml \
     android.hardware.sensor.gyroscope.prebuilt.xml \
     android.hardware.sensor.light.prebuilt.xml \
     android.hardware.sensor.stepcounter.prebuilt.xml \
     android.hardware.sensor.stepdetector.prebuilt.xml \
+    android.hardware.telephony.gsm.prebuilt.xml \
     android.hardware.usb.accessory.prebuilt.xml \
     android.hardware.usb.host.prebuilt.xml \
     android.hardware.vulkan.compute-0.prebuilt.xml \
@@ -245,28 +253,28 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.passpoint.prebuilt.xml \
     android.hardware.wifi.prebuilt.xml \
     android.software.ipsec_tunnels.prebuilt.xml \
-    android.software.sip.voip.prebuilt.xml \
-    android.hardware.telephony.gsm.prebuilt.xml \
-    android.hardware.fingerprint.prebuilt.xml \
     android.software.opengles.deqp.level-2022-03-01.prebuilt.xml \
+    android.software.sip.voip.prebuilt.xml \
     android.software.vulkan.deqp.level-2022-03-01.prebuilt.xml
 
 # Power
 PRODUCT_PACKAGES += android.hardware.power-service.pixel-libperfmgr
 
-PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
-# Public Libraries
-PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+# Power - Powerhint
+PRODUCT_PACKAGES += powerhint.json
 
 # RIL
 PRODUCT_PACKAGES += \
     cbd \
     sehradiomanager
 
-PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/ril/sehradiomanager.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sehradiomanager.conf
-
 $(call soong_config_set,cbd,protocol,sipc)
+
+# RIL - Radio Configuration
+PRODUCT_PACKAGES += sehradiomanager.conf
+
+# RIL - Init
+PRODUCT_PACKAGES += init.ril.rc
 
 # Samsung DAP
 PRODUCT_PACKAGES += SamsungDAP-custom
@@ -275,13 +283,13 @@ PRODUCT_PACKAGES += SamsungDAP-custom
 PRODUCT_PACKAGES += SamsungDoze
 
 # Sensors
-PRODUCT_PACKAGES += \
-    android.hardware.sensors-service.samsung-multihal \
-    libshim_sensorndkbridge
+PRODUCT_PACKAGES += android.hardware.sensors-service.samsung-multihal
+PRODUCT_PACKAGES += libshim_sensorndkbridge
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH) \
+    bootable/deprecated-ota \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/samsung \
@@ -294,15 +302,13 @@ PRODUCT_PACKAGES += SpeakerFX
 endif
 
 # Thermal
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/thermal/btcon.json:$(TARGET_COPY_OUT_VENDOR)/etc/btcon.json
+PRODUCT_PACKAGES += btcon.json
 
 # Touch HAL
 PRODUCT_PACKAGES += vendor.lineage.touch-service.samsung
 
-# Update
+# Updater
 AB_OTA_UPDATER := false
-PRODUCT_SOONG_NAMESPACES += bootable/deprecated-ota
 
 # USB
 PRODUCT_PACKAGES += \
@@ -311,18 +317,22 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set,samsungUsbGadgetVars,gadget_name,13200000.dwc3)
 
-# WiFi
+# Wi-Fi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
     wpa_supplicant
 
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(COMMON_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
-    $(COMMON_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
-
 PRODUCT_CFI_INCLUDE_PATHS += hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib
+
+# Wi-Fi - Configuration
+PRODUCT_PACKAGES += \
+    p2p_supplicant_overlay.conf \
+    wpa_supplicant.conf \
+    wpa_supplicant_overlay.conf
+
+# Wi-Fi - Init
+PRODUCT_PACKAGES += init.wifi.rc
 
 # Vibrator
 PRODUCT_PACKAGES += android.hardware.vibrator-service.samsung
