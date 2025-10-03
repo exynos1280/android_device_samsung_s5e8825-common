@@ -171,7 +171,7 @@ PRODUCT_PACKAGES += toolbox.vendor_ramdisk
 PRODUCT_PACKAGES += libshim_crypto
 
 # Libinit
-$(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH):libinit_s5e8825)
+$(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH)/configs/init/libinit:libinit_s5e8825)
 
 # Lineage Health
 PRODUCT_PACKAGES += vendor.lineage.health-service.default
