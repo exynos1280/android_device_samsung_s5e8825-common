@@ -138,6 +138,9 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \
     android.hardware.gatekeeper@1.0-service
 
+# GPS - Init
+PRODUCT_PACKAGES += init.gps.rc
+
 # Graphics
 $(call soong_config_set,exynos_hwc,force_client_video,true)
 

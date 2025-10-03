@@ -18,6 +18,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.gps.rc",
+    src: "init.gps.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.ril.rc",
     src: "init.ril.rc",
     sub_dir: "init",
