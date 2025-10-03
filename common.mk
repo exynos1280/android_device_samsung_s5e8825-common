@@ -186,7 +186,7 @@ PRODUCT_PACKAGES += public.libraries.txt
 PRODUCT_PACKAGES += vendor.lineage.livedisplay@2.0-service.samsung-exynos
 
 # Log Tag
-include $(COMMON_PATH)/vendor_logtag.mk
+include $(COMMON_PATH)/configs/vendor_logtag.mk
 
 # Media
 PRODUCT_PACKAGES += \
