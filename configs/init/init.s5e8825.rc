@@ -1363,10 +1363,6 @@ on fs
     chown system system /sys/class/mdnie/mdnie/mdnie_ldu
     chown system system /sys/class/mdnie/mdnie/hdr
 
-    # ISunlightEnhancement
-    chown system system /sys/class/mdnie/mdnie/lux
-    chmod 0644 /sys/class/mdnie/mdnie/lux
-
     # Permissions for DRM/KMS
     chmod 0666 /dev/dri/card0
     chown system graphics /dev/dri/card0
