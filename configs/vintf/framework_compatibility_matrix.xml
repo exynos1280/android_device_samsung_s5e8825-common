@@ -60,9 +60,6 @@
         <interface>
             <name>IDrmFactory</name>
             <instance>clearkey</instance>
-        </interface>
-        <interface>
-            <name>IDrmFactory</name>
             <instance>widevine</instance>
         </interface>
     </hal>
