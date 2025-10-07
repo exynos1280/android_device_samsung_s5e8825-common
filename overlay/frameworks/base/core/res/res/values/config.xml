@@ -155,6 +155,7 @@
         <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
         <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
         <item>"/system/bin/surfaceflinger"</item>
+        <item>"/system_ext/priv-app/SpeakerFX/SpeakerFX.apk"</item>
     </string-array>
 
     <!-- Flag indicating whether round icons should be parsed from the application manifest. -->
