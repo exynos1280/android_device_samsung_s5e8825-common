@@ -24,12 +24,9 @@
     <!-- Whether to show min refresh rate in display settings -->
     <bool name="config_show_min_refresh_rate_switch">true</bool>
 
-    <!-- When true enable color temperature setting. -->
-    <bool name="config_enableColorTemperature">true</bool>
-
     <!-- Whether to handle slot change events -->
     <bool name="config_handle_sim_slot_change">true</bool>
 
-     <!-- Show battery cycle count -->
+    <!-- Show battery cycle count -->
     <bool name="config_show_battery_cycle_count" translatable="false">false</bool>
 </resources>
