@@ -618,17 +618,8 @@ on boot
     chown system system /sys/class/sec/switch/uart_sel
     chmod 0660 /sys/class/sec/switch/uart_sel
 
-    # Meta event
-    chown system radio /sys/class/sensors/sensor_dev/flush
-
     # Power
     setprop vendor.powerhal.init 1
-
-    # Permissions for Grip Sensor
-    chown system system /dev/grip_sensor
-    chown system system /dev/grip_sensor_sub
-    chmod 0660 /dev/grip_sensor
-    chmod 0660 /dev/grip_sensor_sub
 
     # Permission for GPU
     chown mediacodec system /sys/kernel/gpu/gpu_mm_min_clock
@@ -1145,67 +1136,6 @@ on boot
     chmod 0644 /efs/cpk/redata.bin
     chmod 0644 /efs/h2k.dat
     chmod 0644 /efs/cpk/h2k.dat
-
-    # Sensors - Accelerometer
-    chown system radio /sys/class/sensors/accelerometer_sensor/name
-    chown system radio /sys/class/sensors/accelerometer_sensor/vendor
-    chown system radio /sys/class/sensors/accelerometer_sensor/raw_data
-    chown system radio /sys/class/sensors/accelerometer_sensor/calibration
-    chown system radio /sys/class/sensors/accelerometer_sensor/selftest
-    chown system radio /sys/class/sensors/accelerometer_sensor/reactive_alert
-    chown system radio /sys/class/sensors/accelerometer_sensor/lowpassfilter
-    chown system system /sys/class/sensors/accelerometer_sensor/dhr_sensor_info
-
-    # Sensors - Gyro
-    chown system radio /sys/class/sensors/gyro_sensor/name
-    chown system radio /sys/class/sensors/gyro_sensor/vendor
-    chown system radio /sys/class/sensors/gyro_sensor/selftest_revised
-    chown system radio /sys/class/sensors/gyro_sensor/power_on
-    chown system radio /sys/class/sensors/gyro_sensor/power_off
-    chown system radio /sys/class/sensors/gyro_sensor/selftest
-    chown system media /sys/class/sensors/gyro_sensor/temperature
-
-    # Sensors - Magnetic
-    chown system radio /sys/class/sensors/magnetic_sensor/name
-    chown system radio /sys/class/sensors/magnetic_sensor/vendor
-    chown system radio /sys/class/sensors/magnetic_sensor/raw_data
-    chown system radio /sys/class/sensors/magnetic_sensor/adc
-    chown system radio /sys/class/sensors/magnetic_sensor/asa
-    chown system radio /sys/class/sensors/magnetic_sensor/dac
-    chown system radio /sys/class/sensors/magnetic_sensor/chk_registers
-    chown system radio /sys/class/sensors/magnetic_sensor/selftest
-    chown system system /sys/class/sensors/magnetic_sensor/dhr_sensor_info
-
-    # Sensors - Proximity
-    chown system radio /sys/class/sensors/proximity_sensor/name
-    chown system radio /sys/class/sensors/proximity_sensor/vendor
-    chown system radio /sys/class/sensors/proximity_sensor/state
-    chown system radio /sys/class/sensors/proximity_sensor/raw_data
-    chown system radio /sys/class/sensors/proximity_sensor/barcode_emul_en
-    chown system radio /sys/class/sensors/proximity_sensor/prox_avg
-    chown system radio /sys/class/sensors/proximity_sensor/prox_cal
-    chown system radio /sys/class/sensors/proximity_sensor/thresh_high
-    chown system radio /sys/class/sensors/proximity_sensor/thresh_low
-    chown system radio /sys/class/sensors/proximity_sensor/prox_offset_pass
-    chown system radio /sys/class/sensors/proximity_sensor/prox_trim
-    chown system radio /sys/class/sensors/proximity_sensor/thresh_detect_high
-    chown system radio /sys/class/sensors/proximity_sensor/thresh_detect_low
-    chown system radio /sys/class/sensors/proximity_sensor/prox_alert_thresh
-    chown system system /sys/class/sensors/proximity_sensor/dhr_sensor_info
-
-    # Sensors - Light
-    chown system radio /sys/class/sensors/light_sensor/name
-    chown system radio /sys/class/sensors/light_sensor/vendor
-    chown system radio /sys/class/sensors/light_sensor/lux
-    chown system radio /sys/class/sensors/light_sensor/raw_data
-    chown system radio /sys/class/sensors/light_sensor/brightness
-    chown system radio /sys/class/sensors/light_sensor/light_circle
-
-    # Sensors - Hidden Hole
-    chown system radio /sys/class/sensors/hidden_hole/hh_ver
-    chown system radio /sys/class/sensors/hidden_hole/hh_write_all_data
-    chown system radio /sys/class/sensors/hidden_hole/hh_is_exist_efs
-    chown system radio /sys/class/sensors/hidden_hole/hh_ext_prox_th
 
 on early-fs
     # Fstab

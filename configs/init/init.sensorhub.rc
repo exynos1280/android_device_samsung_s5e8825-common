@@ -97,3 +97,17 @@ on post-fs
 
 on post-fs-data
 	mkdir /data/vendor/sensorhub/ 0771 root system
+
+on boot
+    # Flush
+    chown system radio /sys/class/sensors/sensor_dev/flush
+
+    # Permissions for Grip Sensor
+    chown system system /dev/grip_sensor
+    chown system system /dev/grip_sensor_sub
+    chmod 0660 /dev/grip_sensor
+    chmod 0660 /dev/grip_sensor_sub
+
+
+
+
