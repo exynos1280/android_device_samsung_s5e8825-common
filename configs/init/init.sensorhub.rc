@@ -1,12 +1,13 @@
 on fs
-	chmod 0770 /spu/sensorhub
+    # SensorHub
+    chmod 0770 /spu/sensorhub
 	chmod 0660 /spu/sensorhub/shub_spu.bin
 	chown root system /spu/sensorhub
 	chown root system /spu/sensorhub/shub_spu.bin
 	write /sys/class/sensors/ssp_sensor/fs_ready 1
 
 on post-fs
-# Factory EFS
+    # Factory EFS
 	chown system system /efs/FactoryApp/baro_delta
 	chown system system /efs/FactoryApp/gyro_cal_data
 	chown system system /efs/FactoryApp/cal_data
@@ -15,7 +16,7 @@ on post-fs
 	chown system system /efs/FactoryApp/calibration_data
 	chmod 0666 /efs/FactoryApp/calibration_data
 
-# Accelerometer
+    # Accelerometer
 	chown system radio /sys/class/sensors/accelerometer_sensor/raw_data
 	chown system radio /sys/class/sensors/accelerometer_sensor/calibration
 	chown system radio /sys/class/sensors/accelerometer_sensor/reactive_alert
@@ -25,7 +26,7 @@ on post-fs
 	chown system radio /sys/class/sensors/accelerometer_sensor/lowpassfilter
 	chown system system /sys/class/sensors/accelerometer_sensor/dhr_sensor_info
 
-# Gyro
+    # Gyro
 	chown system radio /sys/class/sensors/gyro_sensor/power_on
 	chown system radio /sys/class/sensors/gyro_sensor/power_off
 	chown system radio /sys/class/sensors/gyro_sensor/temperature
@@ -35,7 +36,7 @@ on post-fs
 	chown system radio /sys/class/sensors/gyro_sensor/name
 	chown system system /sys/class/sensors/gyro_sensor/dhr_sensor_info
 
-# Magnetometer
+    # Magnetometer
 	chown system radio /sys/class/sensors/magnetic_sensor/raw_data
 	chown system radio /sys/class/sensors/magnetic_sensor/vendor
 	chown system radio /sys/class/sensors/magnetic_sensor/name
@@ -43,7 +44,7 @@ on post-fs
 	chown system radio /sys/class/sensors/magnetic_sensor/raw_data
 	chown system system /sys/class/sensors/magnetic_sensor/dhr_sensor_info
 
-# Light
+    # Light
 	chown system radio /sys/class/sensors/light_sensor/lux
 	chown system radio /sys/class/sensors/light_sensor/raw_data
 	chown system radio /sys/class/sensors/light_sensor/vendor
@@ -54,7 +55,7 @@ on post-fs
 	chown system radio /sys/class/sensors/light_sensor/fifo_data
 	chown system radio /sys/class/sensors/light_sensor/hall_ic
 
-# Proximity
+    # Proximity
 	chown system radio /sys/class/sensors/proximity_sensor/state
 	chown system radio /sys/class/sensors/proximity_sensor/raw_data
 	chown system radio /sys/class/sensors/proximity_sensor/prox_avg
@@ -70,20 +71,12 @@ on post-fs
 	chown system radio /sys/class/sensors/proximity_sensor/prox_trim
 	chown system system /sys/class/sensors/proximity_sensor/dhr_sensor_info
 
-# Barometer
-	chown system radio /sys/class/sensors/barometer_sensor/sea_level_pressure
-	chown system radio /sys/class/sensors/barometer_sensor/vendor
-	chown system radio /sys/class/sensors/barometer_sensor/name
-	chown system radio /sys/class/sensors/barometer_sensor/calibration
-	chown system radio /sys/class/sensors/barometer_sensor/temperature
-	chown system system /sys/class/sensors/barometer_sensor/dhr_sensor_info
-
-# Flip Cover Detector
+    # Flip Cover Detector
     chown system radio /sys/class/sensors/flip_cover_detector_sensor/nfc_cover_status
     chown system radio /sys/class/sensors/flip_cover_detector_sensor/factory_cover_status
     chown system radio /sys/class/sensors/flip_cover_detector_sensor/axis_threshold_setting
 
-# SensorHub
+    # SensorHub
 	chown system radio /sys/class/sensors/ssp_sensor/enable
 	chown system radio /sys/class/sensors/ssp_sensor/mcu_rev
 	chown system radio /sys/class/sensors/ssp_sensor/mcu_name
