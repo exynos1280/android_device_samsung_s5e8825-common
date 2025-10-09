@@ -142,6 +142,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml \
     vendor/aosp/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
+ifneq ($(TARGET_DEVICE),m33x)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest_livedisplay.xml
+endif
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
 
 # Partitions
