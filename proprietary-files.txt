@@ -184,7 +184,6 @@ vendor/lib64/libvkmanager_vendor.so|e539d707d927ec0efb7eea2d421e60a431c336ff|f87
 vendor/lib64/libvkservice.so|85fcac9c71a05af9792adb99992acace44e27a60|fe537335d588530413f841dbed70e36bdec8b370
 
 # Sensors
-vendor/etc/init/init.sensorhub.rc
 vendor/etc/sensors/hals.conf
 vendor/lib64/sensors.grip.so
 vendor/lib64/sensors.inputvirtual.so

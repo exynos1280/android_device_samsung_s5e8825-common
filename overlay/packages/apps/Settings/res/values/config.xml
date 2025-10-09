@@ -26,10 +26,4 @@
 
     <!-- When true enable color temperature setting. -->
     <bool name="config_enableColorTemperature">true</bool>
-
-    <!-- Whether to handle slot change events -->
-    <bool name="config_handle_sim_slot_change">true</bool>
-
-     <!-- Show battery cycle count -->
-    <bool name="config_show_battery_cycle_count" translatable="false">false</bool>
 </resources>
