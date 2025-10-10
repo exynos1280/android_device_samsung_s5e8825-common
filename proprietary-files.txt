@@ -102,8 +102,8 @@ vendor/lib64/libwrappergps.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.1.so
 
-# Graphics - from a54x - A546BXXSFDYI1
-vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so,vendor/lib64/libOpenCL.so.1,vendor/lib64/libOpenCL.so.1.1|d4bd90eef31afc3d30464461b49fb2fb78d73ec6
+# Graphics - from a54x - A546BXXUFEYI4
+vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so,vendor/lib64/libOpenCL.so.1,vendor/lib64/libOpenCL.so.1.1|668906da1c05740cbedf3cf4476ee550ace4c955
 vendor/lib64/hw/vulkan.mali.so|8d5c6634ec83b9d1940eb8327e2d84a2c3c6da56
 
 # Media - Codecs
@@ -111,13 +111,13 @@ vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_performance.xml
 vendor/etc/media_profiles_V1_0.xml
 
-# Media - DRM Widevine - from a54x - A546BXXSFDYI1
+# Media - DRM Widevine - from a54x - A546BXXUFEYI4
 vendor/bin/hw/android.hardware.drm-service.widevine|8067253631a71e2ad01abb33cbc9257eda611ad2
 vendor/etc/init/android.hardware.drm-service.widevine.rc|54c79ef531c9c135fa234a8515b3d37f0e1ccc4d
 vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml|7e13b6628572b1cdd76351b744e2805d4e6f2dd9
 vendor/lib64/libwvaidl.so|c736b77f5d065cc03de9e5bbb20c26b6cced8710|0291814fb9f571e615a83d019846e2c4b26e07e4
 
-# Media - DRM Widevine - Dependencies - from a54x - A546BXXSFDYI1
+# Media - DRM Widevine - Dependencies - from a54x - A546BXXUFEYI4
 vendor/lib64/liboemcrypto.so|0f23089c54ce5ca89d1cd0ff3356c1debc28968e
 
 # NFC
@@ -129,18 +129,16 @@ vendor/etc/plmn_delta_chn.bin
 vendor/etc/plmn_delta_hktw.bin
 vendor/etc/plmn_se13_prebuilt.bin
 
-# RIL - from a54x - A546BXXSFDYI1
+# RIL - from a54x - A546BXXUFEYI4
 vendor/bin/hw/rild|249bd469620af395bcca58153d40cee6c28bdcb5
-vendor/etc/init/cass.rc|965838732854fc12d687fde4cd407e876047e592
-vendor/etc/init/vendor.samsung.rilchip.slsi.rc|9ab6b924d2f5ae56a408a55d67c142e7082a00e0
 vendor/etc/init/vendor.samsung.rild.rc|a4cc7e6d99aa026b4dc438d73b260d4143ae26b6
 vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml|c3f8ea3f6228f2d572081b0c0ae29a251de4350b
-vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_33.xml|e9cdde9d05c5cce32f76bbb164437f43b3288157
+vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_33.xml|a4efe27cfafe7bbc3c1c84beceddefee94c95404
 vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_33.xml|ebbe359a9b2d78cb88debe79d9183c039afb7c01
 vendor/lib64/libVendorSemDataProps.so|87fe9fcbc70a70ab1735a72f59bf6fbfd3fd3b7f
-vendor/lib64/libVendorSemTelephonyProps.so|ddb14e765ce4a9227c936ced22fb45ddab08d765|89587434e268090ace8c8d049f05b74f139fa0dd
-vendor/lib64/libril_sem.so|d66b065f6deb695e3498fd31a21737c25adae2e1
-vendor/lib64/libsec-ril.so|f1319b486f942fd0525de9037424ba9d305d080b
+vendor/lib64/libVendorSemTelephonyProps.so|2eaf75bca2ca2de44581e12b002ffbd18967e9cf|c954a9e40578dada7517ca989f829ea1a8809396
+vendor/lib64/libril_sem.so|530e35e015bc8d6ba9c5994be59d6e2a897ae9ff
+vendor/lib64/libsec-ril.so|0bcbd1b72b7eb6865cad719d1cd51e3793e76677
 vendor/lib64/libsecril-client.so|bae84e05d1c19dc5b41bfe2326dbf2744b1e412c
 vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so|738bc9ac0ca800b36e8b08652240ee01ddba6e47
 vendor/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so|6faa7fbeab4b7d335d434729ec22493fde30028c
@@ -149,13 +147,14 @@ vendor/lib64/vendor.samsung.hardware.radio.data-V1-ndk.so|8645b1d3d2e944a38ec07e
 vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so|9b3b09c9bc2911b801d0de0caea13476a90f8776
 vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so|611a9f8ca1a46b33471643e200e70ce28f963b75
 
-# RIL - Dependencies - from a54x - A546BXXSFDYI1
+# RIL - Dependencies - from a54x - A546BXXUFEYI4
 vendor/bin/cass|936160fcfaaa785cbc4e93c5b87bb48f08a56497
+vendor/etc/init/cass.rc|965838732854fc12d687fde4cd407e876047e592
 vendor/etc/mtu-conf.xml|5bac5f518c1573e774758d2133518cc227134099
-vendor/lib64/libengmode_client.so|ea5ddf5cdfc4166c096dad08a43933ec43905203
+vendor/lib64/libengmode_client.so|92861ed74b5cb352eb41eb72c1b7a3362f06aea5
 vendor/lib64/libfloatingfeature.so|bdf3236d15da454f3db0ae499f8b3bdabc48efa7
 vendor/lib64/libsecnativefeature.so|eca43700e1f9ad9775d24f24e0f8b169aa2198b0
-vendor/lib64/libsemnativecarrierfeature.so|04fd039d7ef5718818cb91d4991453f457fe9896
+vendor/lib64/libsemnativecarrierfeature.so|bac6d969c5d04e1d8ef95fa5c2c633b3a1ef3c29
 
 # Security - Keymint
 vendor/lib64/vendor.samsung.hardware.keymint-V1-ndk_platform.so
