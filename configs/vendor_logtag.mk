@@ -9,6 +9,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.log.tag.AnalyticsService=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.ArtService=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.b/223498680=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.DrmHalHidl=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.EMS=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.CompatibilityChangeReporter=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.ContrastColorUtil=$(VENDOR_LOG_LEVEL) \
