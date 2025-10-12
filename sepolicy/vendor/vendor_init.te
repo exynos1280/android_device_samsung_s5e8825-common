@@ -31,6 +31,7 @@ dontaudit vendor_init sysfs_sensors:dir { add_name create };
 dontaudit vendor_init sysfs_sensors:file create;
 dontaudit vendor_init sysfs:dir add_name;
 dontaudit vendor_init sysfs:file create;
+dontaudit vendor_init bluetooth_prop:property_service set;
 dontaudit vendor_init {
     default_prop
     system_prop

@@ -4,3 +4,4 @@ allow system_server audioserver_tmpfs:file write;
 
 dontaudit system_server sysfs:file { getattr open read };
 dontaudit system_server zygote_tmpfs:file write;
+dontaudit system_server tmpfs:file write;
