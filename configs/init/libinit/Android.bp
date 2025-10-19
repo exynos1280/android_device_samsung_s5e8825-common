@@ -9,6 +9,7 @@ cc_library_static {
     srcs: [
         "libinit_dalvik_heap.cpp",
         "libinit_s5e8825.cpp",
+        "libinit_device.cpp",
         "libinit_variant.cpp",
         "libinit_utils.cpp",
     ],
