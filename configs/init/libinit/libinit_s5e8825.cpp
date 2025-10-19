@@ -181,10 +181,7 @@ static const std::vector<variant_info_t> variants = {
 void vendor_load_properties() {
     search_variant(variants);
 
-    std::string model = GetProperty("ro.boot.product.model", "");
-    if (model.empty()) {
-        model = GetProperty("ro.boot.em.model", "");
-    }
+    std::string model = GetProperty("ro.boot.em.model", "");
     set_ro_build_prop("model", model, true);
     set_ro_build_prop("product", model, false);
 
