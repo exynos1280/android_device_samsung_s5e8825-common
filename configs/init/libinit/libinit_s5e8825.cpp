@@ -5,6 +5,7 @@
  */
 
 #include <libinit_dalvik_heap.h>
+#include <libinit_device.h>
 #include <libinit_utils.h>
 #include <libinit_variant.h>
 #include "vendor_init.h"
@@ -13,6 +14,69 @@
 
 using android::base::GetProperty;
 
+/*
+ * Devices
+ */
+static const device_info_t a25x = {
+    .codename = "a25x",
+    .full_name = "Galaxy A25 5G",
+};
+
+static const device_info_t a26xs = {
+    .codename = "a26xs",
+    .full_name = "Galaxy A26 5G",
+};
+
+static const device_info_t a33x = {
+    .codename = "a33x",
+    .full_name = "Galaxy A33 5G",
+};
+
+static const device_info_t a53x = {
+    .codename = "a53x",
+    .full_name = "Galaxy A53 5G",
+};
+
+static const device_info_t f34x = {
+    .codename = "f34x",
+    .full_name = "Galaxy F34 5G",
+};
+
+static const device_info_t gta4xls = {
+    .codename = "gta4xls",
+    .full_name = "Galaxy Tab S6 Lite",
+};
+
+static const device_info_t gta4xlswifi = {
+    .codename = "gta4xlswifi",
+    .full_name = "Galaxy Tab S6 Lite (WiFi)",
+};
+
+static const device_info_t m33x = {
+    .codename = "m33x",
+    .full_name = "Galaxy M33 5G",
+};
+
+static const device_info_t m34x = {
+    .codename = "m34x",
+    .full_name = "Galaxy M34 5G",
+};
+
+static const std::vector<device_info_t> devices = {
+    a25x,
+    a26xs,
+    a33x,
+    a53x,
+    f34x,
+    gta4xls,
+    gta4xlswifi,
+    m33x,
+    m34x,
+};
+
+/*
+ * Variants
+ */
 static const variant_info_t a25xxx = {
     .device = "a25x",
     .model = "SM-A256B",
@@ -179,6 +243,7 @@ static const std::vector<variant_info_t> variants = {
 };
 
 void vendor_load_properties() {
+    search_device(devices);
     search_variant(variants);
 
     std::string model = GetProperty("ro.boot.em.model", "");
