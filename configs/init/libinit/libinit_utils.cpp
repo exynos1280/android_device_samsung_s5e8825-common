@@ -29,6 +29,11 @@ std::vector<std::string> ro_props_default_source_order = {
     "",
 };
 
+void set_ro_boot_prop(const std::string &prop, const std::string &value) {
+    std::string prop_name = "ro.boot." + prop;
+    property_override(prop_name, value, true);
+}
+
 void set_ro_build_prop(const std::string &prop, const std::string &value, bool product) {
     std::string prop_name;
 

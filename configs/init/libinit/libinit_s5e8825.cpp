@@ -182,6 +182,7 @@ void vendor_load_properties() {
     search_variant(variants);
 
     std::string model = GetProperty("ro.boot.em.model", "");
+    set_ro_boot_prop("product.hardware.sku", model);
     set_ro_build_prop("model", model, true);
     set_ro_build_prop("product", model, false);
 
