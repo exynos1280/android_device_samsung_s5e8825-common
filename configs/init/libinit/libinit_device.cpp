@@ -28,4 +28,11 @@ void set_device_props(const device_info_t device) {
     property_override("bluetooth.device.default_name", device.full_name);
 
     set_ro_build_prop("device", device.codename, true);
+
+    if (device.adaptive_rr) {
+        property_override("ro.surface_flinger.set_display_power_timer_ms", "200");
+        property_override("ro.surface_flinger.set_idle_timer_ms", "1000");
+        property_override("ro.surface_flinger.set_touch_timer_ms", "1000");
+        property_override("ro.surface_flinger.use_content_detection_for_refresh_rate", "true");
+    }
 }
