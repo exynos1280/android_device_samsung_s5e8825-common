@@ -25,7 +25,6 @@ void search_variant(const std::vector<variant_info_t> variants) {
 }
 
 void set_variant_props(const variant_info_t variant) {
-    set_ro_build_prop("device", variant.device, true);
     set_ro_build_prop("model", variant.model, true);
     set_ro_build_prop("name", variant.name, true);
 

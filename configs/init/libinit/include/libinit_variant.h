@@ -12,7 +12,6 @@
 
 typedef struct variant_info {
     std::string em_model_prop;
-    std::string device;
     std::string model;
     std::string name;
     std::string build_fingerprint;
