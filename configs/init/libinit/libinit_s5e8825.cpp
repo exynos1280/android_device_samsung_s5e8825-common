@@ -164,8 +164,8 @@ static const variant_info_t a53xnsxx = {
 static const variant_info_t a53xzc = {
     .model = "SM-A5360",
     .name = "a53xzc",
-    .build_fingerprint = "samsung/a53xzc/essi:15/AP3A.240905.015.A2/A5360ZCSHFYH1:user/release-keys",
-    .build_desc = "a53xzc-user 15 AP3A.240905.015.A2 A5360ZCSHFYH1 release-keys"
+    .build_fingerprint = "samsung/a53xzc/essi:15/AP3A.240905.015.A2/A5360ZHSHFYI1:user/release-keys",
+    .build_desc = "a53xzc-user 15 AP3A.240905.015.A2 A5360ZHSHFYI1 release-keys"
 };
 
 static const variant_info_t gta4xlsxx = {
