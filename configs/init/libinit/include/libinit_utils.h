@@ -9,10 +9,12 @@
 
 #include <string>
 
-void property_override(const std::string& prop, const std::string& value, bool add = true);
+void property_override(const std::string &prop, const std::string &value,
+                       bool add = true);
 
 void set_ro_boot_prop(const std::string &prop, const std::string &value);
-void set_ro_build_prop(const std::string &prop, const std::string &value, bool product = false);
+void set_ro_build_prop(const std::string &prop, const std::string &value,
+                       bool product = false);
 
 std::string fingerprint_to_description(std::string fingerprint);
 

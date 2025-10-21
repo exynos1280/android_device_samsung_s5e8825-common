@@ -14,22 +14,23 @@ using android::base::GetProperty;
 #define EM_MODEL_PROP "ro.boot.em.model"
 
 void search_variant(const std::vector<variant_info_t> variants) {
-    std::string em_model_prop = GetProperty(EM_MODEL_PROP, "");
+  std::string em_model_prop = GetProperty(EM_MODEL_PROP, "");
 
-    for (const auto& variant : variants) {
-        if ((variant.model == "" || variant.model == em_model_prop)) {
-            set_variant_props(variant);
-            break;
-        }
+  for (const auto &variant : variants) {
+    if ((variant.model == "" || variant.model == em_model_prop)) {
+      set_variant_props(variant);
+      break;
     }
+  }
 }
 
 void set_variant_props(const variant_info_t variant) {
-    set_ro_build_prop("model", variant.model, true);
-    set_ro_build_prop("name", variant.name, true);
+  set_ro_build_prop("model", variant.model, true);
+  set_ro_build_prop("name", variant.name, true);
 
-    if (access("/system/bin/recovery", F_OK) != 0) {
-        property_override("ro.bootimage.build.fingerprint", variant.build_fingerprint);
-        property_override("ro.build.description", variant.build_desc);
-    }
+  if (access("/system/bin/recovery", F_OK) != 0) {
+    property_override("ro.bootimage.build.fingerprint",
+                      variant.build_fingerprint);
+    property_override("ro.build.description", variant.build_desc);
+  }
 }
