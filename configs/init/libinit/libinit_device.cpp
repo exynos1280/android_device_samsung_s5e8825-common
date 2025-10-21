@@ -35,4 +35,15 @@ void set_device_props(const device_info_t device) {
         property_override("ro.surface_flinger.set_touch_timer_ms", "1000");
         property_override("ro.surface_flinger.use_content_detection_for_refresh_rate", "true");
     }
+    if (device.side_fp) {
+        property_override("ro.vendor.fingerprint.type", "side");
+        property_override("ro.vendor.fingerprint.supports_gestures", "false");
+        property_override("ro.vendor.fingerprint.sensor_location", "1080|820|350|local:4633128672291735932");
+    }
+    if (device.udfps) {
+        property_override("ro.vendor.fingerprint.type", "udfps_optical");
+        property_override("ro.vendor.fingerprint.sensor_location", "540|2092|118");
+        property_override("ro.vendor.fingerprint.force_calibrate", "true");
+        property_override("ro.vendor.fingerprint.request_touch_event", "true");
+    }
 }
