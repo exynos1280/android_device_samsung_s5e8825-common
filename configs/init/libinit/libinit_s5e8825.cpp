@@ -21,30 +21,35 @@ static const device_info_t a25x = {
     .codename = "a25x",
     .full_name = "Galaxy A25 5G",
     .adaptive_rr = true,
+    .side_fp = true,
 };
 
 static const device_info_t a26xs = {
     .codename = "a26xs",
     .full_name = "Galaxy A26 5G",
     .adaptive_rr = true,
+    .side_fp = true,
 };
 
 static const device_info_t a33x = {
     .codename = "a33x",
     .full_name = "Galaxy A33 5G",
     .adaptive_rr = true,
+    .udfps = true,
 };
 
 static const device_info_t a53x = {
     .codename = "a53x",
     .full_name = "Galaxy A53 5G",
     .adaptive_rr = true,
+    .udfps = true,
 };
 
 static const device_info_t f34x = {
     .codename = "f34x",
     .full_name = "Galaxy F34 5G",
     .adaptive_rr = true,
+    .side_fp = true,
 };
 
 static const device_info_t gta4xls = {
@@ -61,12 +66,14 @@ static const device_info_t m33x = {
     .codename = "m33x",
     .full_name = "Galaxy M33 5G",
     .adaptive_rr = true,
+    .side_fp = true,
 };
 
 static const device_info_t m34x = {
     .codename = "m34x",
     .full_name = "Galaxy M34 5G",
     .adaptive_rr = true,
+    .side_fp = true,
 };
 
 static const std::vector<device_info_t> devices = {

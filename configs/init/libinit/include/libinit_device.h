@@ -14,6 +14,8 @@ typedef struct device_info {
     std::string codename;
     std::string full_name;
     bool adaptive_rr = false;
+    bool side_fp = false;
+    bool udfps = false;
 } device_info_t;
 
 void search_device(const std::vector<device_info_t> devices);
