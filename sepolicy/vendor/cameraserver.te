@@ -1,4 +1,4 @@
-get_prop(cameraserver, vendor_hwc_prop)
-
 allow cameraserver property_socket:sock_file write;
 allow cameraserver init:unix_stream_socket connectto;
+
+get_prop(cameraserver, vendor_hwc_prop)

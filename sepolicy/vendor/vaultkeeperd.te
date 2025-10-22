@@ -1,12 +1,8 @@
-# vaultkeeperd.te
 allow vaultkeeperd spu_block_device:blk_file { ioctl open read write };
 allow vaultkeeperd hwservicemanager_prop:file { map getattr read open };
 
-hwbinder_use(vaultkeeperd)
-
 get_prop(vaultkeeperd, vendor_vaultkeeper_prop)
 
-init_daemon_domain(vaultkeeperd)
+hwbinder_use(vaultkeeperd)
 
-allow vaultkeeperd hal_vaultkeeper_server_hwservice:hwservice_manager { add find };
-allow vaultkeeperd hidl_base_hwservice:hwservice_manager { add };
+init_daemon_domain(vaultkeeperd)

@@ -1,7 +1,5 @@
-vendor.samsung.hardware.gnss::ISehGnss                                                  u:object_r:hal_gnss_hwservice:s0
-
-# Vaultkeeper
-vendor.samsung.hardware.security.vaultkeeper::ISehVaultKeeper                           u:object_r:hal_vaultkeeper_server_hwservice:s0
-
-# Epic
+# EPIC
 vendor.samsung_slsi.hardware.epic::IEpicRequest                                         u:object_r:hal_vendor_epic_hwservice:s0
+
+# GNSS
+vendor.samsung.hardware.gnss::ISehGnss                                                  u:object_r:hal_gnss_hwservice:s0

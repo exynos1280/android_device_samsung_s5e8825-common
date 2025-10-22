@@ -9,7 +9,4 @@ allow epicd migov_device:chr_file rw_file_perms;
 allow epicd migov_file:file rw_file_perms;
 allow epicd sysfs:file { open write };
 
-allow init epicd_socket:unix_stream_socket { create bind };
-allow init epicd_socket:unix_dgram_socket { create bind };
-
 dontaudit epicd device:chr_file { ioctl open read write };

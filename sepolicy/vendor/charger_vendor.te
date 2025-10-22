@@ -1,9 +1,9 @@
+allow charger_vendor gpu_device:chr_file rw_file_perms;
+
 r_dir_file(charger_vendor, device)
 r_dir_file(charger_vendor, sysfs_battery)
 r_dir_file(charger_vendor, sysfs_battery_writable)
 r_dir_file(charger_vendor, gpu_device)
-
 r_dir_file(charger_vendor, gpu_device)
-allow charger_vendor gpu_device:chr_file rw_file_perms;
 
 dontaudit charger_vendor default_prop:file r_file_perms;

@@ -1,6 +1,6 @@
 type nxp_nfc_device, dev_type;
 
-allow hal_nfc_default nxp_nfc_device:chr_file { ioctl read write };
 allow hal_nfc_default nfc_device:chr_file rw_file_perms;
+allow hal_nfc_default nxp_nfc_device:chr_file { ioctl read write };
 
 dontaudit hal_nfc_default default_android_hwservice:hwservice_manager find;

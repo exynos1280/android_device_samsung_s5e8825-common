@@ -1,23 +1,19 @@
-# For the main service: /vendor/bin/hw/vendor.samsung_slsi.hardware.epic@1.0-service
+type hal_epic_default_config_file, file_type, vendor_file_type;
+type hal_epic_helper_library, vendor_file_type, file_type;
+type hal_vendor_epic_hwservice, hwservice_manager_type;
 type hal_vendor_epic_service_default, domain;
 type hal_vendor_epic_service_default_exec, exec_type, file_type, vendor_file_type;
-init_daemon_domain(hal_vendor_epic_service_default)
 
-type hal_vendor_epic_hwservice, hwservice_manager_type;
-
-type hal_epic_helper_library, vendor_file_type, file_type;
-
-type hal_epic_default_config_file, file_type, vendor_file_type;
-
-add_hwservice(hal_vendor_epic_service_default, hal_vendor_epic_hwservice)
-
-allow hal_vendor_epic_service_default hwservicemanager:binder { call transfer };
-allow hal_vendor_epic_service_default hal_epic_helper_library:file { read open execute getattr };
-allow hal_vendor_epic_service_default hal_epic_default_config_file:file r_file_perms;
-allow hal_vendor_epic_service_default epicd_socket:unix_dgram_socket sendto;
-allow hal_vendor_epic_service_default hwservicemanager_prop:file { read open getattr map };
 allow hal_vendor_epic_service_default epicd_socket:sock_file { write setattr };
 allow hal_vendor_epic_service_default epicd_socket:unix_dgram_socket sendto;
 allow hal_vendor_epic_service_default epicd_socket:unix_stream_socket write;
+allow hal_vendor_epic_service_default hal_epic_default_config_file:file r_file_perms;
+allow hal_vendor_epic_service_default hal_epic_helper_library:file { read open execute getattr };
+allow hal_vendor_epic_service_default hwservicemanager:binder { call transfer };
+allow hal_vendor_epic_service_default hwservicemanager_prop:file { read open getattr map };
+
+add_hwservice(hal_vendor_epic_service_default, hal_vendor_epic_hwservice)
+
+init_daemon_domain(hal_vendor_epic_service_default)
 
 vndbinder_use(hal_vendor_epic_service_default)
