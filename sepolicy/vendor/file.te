@@ -31,9 +31,9 @@ type sysfs_v4l, sysfs_type, r_fs_type, fs_type;
 type ems_file, fs_type, sysfs_type;
 type migov_file, fs_type, sysfs_type;
 
-# Weaver firmware
-type secnvm_vendor_etc_file, file_type, vendor_file_type;
-
-# DRM Widevine
+# DRM - Widevine
 type hal_drm_widevine_service, service_manager_type;
 type mediadrm, service_manager_type;
+
+# Weaver firmware
+type secnvm_vendor_etc_file, file_type, vendor_file_type;

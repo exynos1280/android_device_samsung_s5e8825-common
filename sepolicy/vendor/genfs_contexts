@@ -1,47 +1,56 @@
-## Proc
-genfscon proc /simslot_count                                                                                   u:object_r:proc_simslot_count:s0
-genfscon proc /sys/vm/swappiness                                                                               u:object_r:proc_swappiness:s0
+# Audio
+genfscon sysfs /firmware/devicetree/base/sound/mixer-paths                                                                            u:object_r:sysfs_audio:s0
 
-## Sysfs
-# Class
-genfscon sysfs /class/video4linux                                                                              u:object_r:sysfs_v4l:s0
+# Battery
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-1/1-0049/sm5714-charger/power_supply/sm5714-charger/type                          u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-1/1-0049/sm5714-fuelgauge/power_supply/sm5714-fuelgauge/type                      u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-1/1-0049/sm5714-charger/power_supply/sm5714-otg/type                              u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-005e/power_supply/hl7132-charger/type                                         u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-charger/power_supply/s2mf301-otg/type                            u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-muic/power_supply/muic-manager/type                              u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-powermeter/power_supply/s2mf301-pmeter/type                      u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-charger/power_supply/s2mf301-charger/type                        u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec-direct-charger/power_supply/sec-direct-charger/type  u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-top/power_supply/s2mf301-top/type                                u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003c/power_supply/usbpd-manager/type                                          u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-fuelgauge/power_supply/s2mf301-fuelgauge/type                    u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/leds-s2mf301/power_supply/s2mf301-fled/type                              u:object_r:sysfs_battery:s0
 
-# Devices
-genfscon sysfs /devices/platform/13200000.usb/13200000.dwc3/udc/13200000.dwc3/current_speed                      u:object_r:sysfs_usb:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-1/1-0049/sm5714-charger/power_supply/sm5714-charger/type     u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-1/1-0049/sm5714-fuelgauge/power_supply/sm5714-fuelgauge/type u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-1/1-0049/sm5714-charger/power_supply/sm5714-otg/type         u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/acpm_mfd_bus@11a00000/i2c-11/11-001f/s2mpu13-gpadc/iio:device0/name             u:object_r:sysfs_iio:s0
-genfscon sysfs /devices/platform/mfc/video4linux/video6/name                                                     u:object_r:sysfs_v4l:s0
-genfscon sysfs /devices/platform/mfc/video4linux/video7/name                                                     u:object_r:sysfs_v4l:s0
-genfscon sysfs /devices/system/chip-id/revision                                                                  u:object_r:sysfs_chipid:s0
+# Bluetooth
+genfscon sysfs /module/scsc_bt/parameters/bluetooth_address                                                                           u:object_r:sysfs_bt_writable:s0
 
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-005e/power_supply/hl7132-charger/type                          u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-charger/power_supply/s2mf301-otg/type              u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-muic/power_supply/muic-manager/type                u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-powermeter/power_supply/s2mf301-pmeter/type        u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-charger/power_supply/s2mf301-charger/type         u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec-direct-charger/power_supply/sec-direct-charger/type u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-top/power_supply/s2mf301-top/type                  u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003c/power_supply/usbpd-manager/type                            u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/s2mf301-fuelgauge/power_supply/s2mf301-fuelgauge/type      u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/13860000.hsi2c/i2c-2/2-003a/leds-s2mf301/power_supply/s2mf301-fled/type                 u:object_r:sysfs_battery:s0
+# Camera
+genfscon sysfs /kernel/mm/vmscan/mem_boost_mode                                                                                       u:object_r:sysfs_camera_writable:s0
 
-genfscon sysfs /devices/virtual/sensors/light_sensor/hall_ic                                                     u:object_r:sysfs_sensors_writable:s0
+# Chip ID
+genfscon sysfs /devices/system/chip-id/revision                                                                                       u:object_r:sysfs_chipid:s0
 
-genfscon sysfs /devices/virtual/sensors/flip_cover_detector_sensor/nfc_cover_status                              u:object_r:sysfs_sensors_writable:s0
+# EMS
+genfscon sysfs /kernel/ems/emstune/aio_tuner                                                                                          u:object_r:ems_file:s0
 
-genfscon sysfs /devices/platform/exynos-migov/migov/running                                                      u:object_r:migov_file:s0
-genfscon sysfs /devices/platform/exynos-migov/control/set_margin                                                 u:object_r:migov_file:s0
-genfscon sysfs /devices/platform/exynos-migov/control/fragutil_thr                                               u:object_r:migov_file:s0
-genfscon sysfs /devices/platform/exynos-migov/control/control_profile                                            u:object_r:migov_file:s0
+# IIO
+genfscon sysfs /devices/platform/acpm_mfd_bus@11a00000/i2c-11/11-001f/s2mpu13-gpadc/iio:device0/name                                  u:object_r:sysfs_iio:s0
 
-# Firmware
-genfscon sysfs /firmware/devicetree/base/sound/mixer-paths                                                     u:object_r:sysfs_audio:s0
+# Migov
+genfscon sysfs /devices/platform/exynos-migov/migov/running                                                                           u:object_r:migov_file:s0
+genfscon sysfs /devices/platform/exynos-migov/control/set_margin                                                                      u:object_r:migov_file:s0
+genfscon sysfs /devices/platform/exynos-migov/control/fragutil_thr                                                                    u:object_r:migov_file:s0
+genfscon sysfs /devices/platform/exynos-migov/control/control_profile                                                                 u:object_r:migov_file:s0
 
-# Kernel
-genfscon sysfs /kernel/mm/vmscan/mem_boost_mode                                                                u:object_r:sysfs_camera_writable:s0
-genfscon sysfs /kernel/ems/emstune/aio_tuner                                                                   u:object_r:ems_file:s0
+# RIL
+genfscon proc /simslot_count                                                                                                          u:object_r:proc_simslot_count:s0
 
-# Module
-genfscon sysfs /module/scsc_bt/parameters/bluetooth_address                                                    u:object_r:sysfs_bt_writable:s0
+# Sensors
+genfscon sysfs /devices/virtual/sensors/light_sensor/hall_ic                                                                          u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/sensors/flip_cover_detector_sensor/nfc_cover_status                                                   u:object_r:sysfs_sensors_writable:s0
+
+# Swap
+genfscon proc /sys/vm/swappiness                                                                                                      u:object_r:proc_swappiness:s0
+
+# video4linux
+genfscon sysfs /class/video4linux                                                                                                     u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/mfc/video4linux/video6/name                                                                          u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/mfc/video4linux/video7/name                                                                          u:object_r:sysfs_v4l:s0
+
+# USB
+genfscon sysfs /devices/platform/13200000.usb/13200000.dwc3/udc/13200000.dwc3/current_speed                                           u:object_r:sysfs_usb:s0

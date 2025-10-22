@@ -1,32 +1,34 @@
 type hermesd, domain;
 type hermesd_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hermesd)
-
-hal_client_domain(hermesd, hal_weaver)
-hal_server_domain(hermesd, hal_weaver)
-
-hwbinder_use(hermesd)
-binder_call(hermesd, hal_weaver_server)
-binder_call(hermesd, servicemanager)
-binder_call(system_server, hermesd)
-
-add_service(hermesd, hermes_command_service)
 
 allow hermesd hwservicemanager:binder call;
 allow hermesd hwservicemanager_prop:file { getattr map open read };
 allow hermesd init:unix_stream_socket connectto;
 allow hermesd k250a_device:chr_file { ioctl open read write };
 allow hermesd property_socket:sock_file write;
+allow hermesd secnvm_vendor_etc_file:file execute;
 allow hermesd ssp_device:chr_file { ioctl open read write };
 allow hermesd tz_user_device:chr_file { ioctl map open read write };
-allow hermesd vendor_tztsdaemon_prop:file { getattr map open read };
 allow hermesd vendor_data_file:file { create write open };
-allow hermesd vendor_data_file:dir { write };
-allow hermesd vendor_data_file:dir { add_name };
+allow hermesd vendor_data_file:dir write;
+allow hermesd vendor_data_file:dir add_name;
+allow hermesd vendor_tztsdaemon_prop:file { getattr map open read };
+
+add_service(hermesd, hermes_command_service)
+
+binder_call(hermesd, hal_weaver_server)
+binder_call(hermesd, servicemanager)
+binder_call(system_server, hermesd)
+
+hal_client_domain(hermesd, hal_weaver)
+hal_server_domain(hermesd, hal_weaver)
+
+hwbinder_use(hermesd)
+
+init_daemon_domain(hermesd)
 
 r_dir_file(hermesd, secnvm_vendor_etc_file)
-allow hermesd secnvm_vendor_etc_file:file execute;
-
-dontaudit hermesd exported_default_prop:property_service set;
 
 set_prop(hermesd, vendor_hermes_prop)
+
+dontaudit hermesd exported_default_prop:property_service set;

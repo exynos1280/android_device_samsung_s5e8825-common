@@ -1,7 +1,7 @@
+allow system_server audioserver_tmpfs:file write;
 allow system_server self:capability sys_module;
 allow system_server sysfs_performance:file r_file_perms;
-allow system_server audioserver_tmpfs:file write;
 
 dontaudit system_server sysfs:file { getattr open read };
-dontaudit system_server zygote_tmpfs:file write;
 dontaudit system_server tmpfs:file write;
+dontaudit system_server zygote_tmpfs:file write;

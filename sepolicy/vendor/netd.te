@@ -1,6 +1,5 @@
-allow netd sysfs_net_mtu_writable:file rw_file_perms;
-
 allow netd self:capability sys_module;
+allow netd sysfs_net_mtu_writable:file rw_file_perms;
 
 dontaudit netd proc_net:dir add_name;
 dontaudit netd proc_net:file create;
