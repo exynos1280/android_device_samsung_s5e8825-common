@@ -54,8 +54,8 @@
 /vendor/bin/epic                                                                            u:object_r:epicd_exec:s0
 /vendor/bin/hw/vendor\.samsung_slsi\.hardware\.epic@1\.0-service                            u:object_r:hal_vendor_epic_service_default_exec:s0
 /vendor/etc/epic\.json                                                                      u:object_r:hal_epic_default_config_file:s0
-/vendor/lib(64)?/libepic_helper\.so                                                         u:object_r:hal_epic_helper_library:s0
-/vendor/lib(64)?/libepicoperator\.so                                                        u:object_r:hal_epic_helper_library:s0
+/vendor/lib64/libepic_helper\.so                                                         u:object_r:hal_epic_helper_library:s0
+/vendor/lib64/libepicoperator\.so                                                        u:object_r:hal_epic_helper_library:s0
 
 # Fingerprint
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.s5e8825  u:object_r:hal_fingerprint_default_exec:s0
