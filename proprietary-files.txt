@@ -158,6 +158,9 @@ vendor/lib64/libsecnativefeature.so|eca43700e1f9ad9775d24f24e0f8b169aa2198b0
 vendor/lib64/libsemnativecarrierfeature.so|04fd039d7ef5718818cb91d4991453f457fe9896
 
 # Security - Keymint
+vendor/bin/hw/android.hardware.security.keymint-service:vendor/bin/hw/android.hardware.security.keymint-service.samsung
+vendor/lib64/libskeymint10device.so
+vendor/lib64/libskeymint_cli.so
 vendor/lib64/vendor.samsung.hardware.keymint-V1-ndk_platform.so
 
 # Security - Keymint - Patched Init

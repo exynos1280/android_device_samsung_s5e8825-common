@@ -66,11 +66,21 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libssl-tm.so': blob_fixup()
         .replace_needed('libcrypto.so', 'libcrypto-tm.so'),
     # Keymint
-    'vendor/lib64/vendor.samsung.hardware.keymint-V1-ndk_platform.so': blob_fixup()
+    (
+        'vendor/bin/hw/android.hardware.security.keymint-service.samsung',
+        'vendor/lib64/libskeymint10device.so',
+        'vendor/lib64/libskeymint_cli.so',
+        'vendor/lib64/vendor.samsung.hardware.keymint-V1-ndk_platform.so',
+    ): blob_fixup()
         .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so',
                         'android.hardware.security.keymint-V4-ndk.so')
+        .replace_needed('android.hardware.security.secureclock-V1-ndk_platform.so',
+                        'android.hardware.security.secureclock-V1-ndk.so')
+        .replace_needed('android.hardware.security.sharedsecret-V1-ndk_platform.so',
+                        'android.hardware.security.sharedsecret-V1-ndk.so')
         .add_needed('android.hardware.security.rkp-V3-ndk.so')
-        .add_needed('libshim_crypto.so'),
+        .add_needed('libshim_crypto.so')
+        .replace_needed('libcrypto.so', 'libcrypto-tm.so'),
     # RIL
     'vendor/lib64/libsec-ril.so': blob_fixup()
         .sig_replace('80 0E 40 F9 E1 03 16 AA 82 0C 80 52 E3 03 15 AA',
