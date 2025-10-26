@@ -209,6 +209,9 @@ PRODUCT_PACKAGES += \
     libnfc_nci_jni \
     Tag
 
+# NFC - Init
+PRODUCT_PACKAGES += init.nfc.samsung.rc
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 

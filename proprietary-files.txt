@@ -120,9 +120,6 @@ vendor/lib64/libwvaidl.so|c736b77f5d065cc03de9e5bbb20c26b6cced8710|0291814fb9f57
 # Media - DRM Widevine - Dependencies - from a54x - A546BXXSFDYI1
 vendor/lib64/liboemcrypto.so|0f23089c54ce5ca89d1cd0ff3356c1debc28968e
 
-# NFC
-vendor/etc/init/init.nfc.samsung.rc
-
 # RIL
 vendor/etc/plmn_delta.bin
 vendor/etc/plmn_delta_chn.bin
