@@ -33,4 +33,8 @@ void set_variant_props(const variant_info_t variant) {
                       variant.build_fingerprint);
     property_override("ro.build.description", variant.build_desc);
   }
+
+  if (!variant.nfc_chip.empty()) {
+    property_override("ro.vendor.nfc.feature.chipname", variant.nfc_chip);
+  }
 }

@@ -13,6 +13,7 @@
 typedef struct device_info {
   std::string codename;
   std::string full_name;
+  std::string nfc_chip;
   bool adaptive_rr = false;
   bool side_fp = false;
   bool udfps = false;
