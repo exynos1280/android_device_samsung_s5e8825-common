@@ -12,6 +12,8 @@
 
 #include <android-base/properties.h>
 
+#define NFC_CHIP_NXP "NXP"
+
 using android::base::GetProperty;
 
 /*
@@ -254,6 +256,25 @@ void vendor_load_properties() {
   set_ro_boot_prop("product.hardware.sku", model);
   set_ro_build_prop("model", model, true);
   set_ro_build_prop("product", model, false);
+
+  std::string nfc_chip = GetProperty("ro.vendor.nfc.feature.chipname", "");
+  if (nfc_chip == NFC_CHIP_NXP) {
+    property_override("ro.camera.notify_nfc", "1");
+    property_override("ro.vendor.nfc.feature.chipname", "NXP_SN100U");
+    property_override("ro.vendor.nfc.info.antpos", "16");
+    property_override("ro.vendor.nfc.info.antposX", "25.4");
+    property_override("ro.vendor.nfc.info.antposY", "35");
+    property_override("ro.vendor.nfc.info.deviceFoldable", "false");
+    property_override("ro.vendor.nfc.info.deviceHeight", "165.4");
+    property_override("ro.vendor.nfc.info.deviceWidth", "76.9");
+    property_override("ro.vendor.nfc.support.advancedsetting", "false");
+    property_override("ro.vendor.nfc.support.autoselect", "true");
+    property_override("ro.vendor.nfc.support.defaultaid", "true");
+    property_override("ro.vendor.nfc.support.ese", "false");
+    property_override("ro.vendor.nfc.support.nonaid", "true");
+    property_override("ro.vendor.nfc.support.othercategory", "true");
+    property_override("ro.vendor.nfc.support.uicc", "true");
+  }
 
   set_dalvik_heap();
 }
