@@ -20,6 +20,7 @@ using android::base::GetProperty;
 static const device_info_t a25x = {
   .codename = "a25x",
   .full_name = "Galaxy A25 5G",
+  .nfc_chip = "ST",
   .adaptive_rr = true,
   .side_fp = true,
 };
@@ -27,6 +28,7 @@ static const device_info_t a25x = {
 static const device_info_t a26xs = {
   .codename = "a26xs",
   .full_name = "Galaxy A26 5G",
+  .nfc_chip = "ST",
   .adaptive_rr = true,
   .side_fp = true,
 };
@@ -34,6 +36,7 @@ static const device_info_t a26xs = {
 static const device_info_t a33x = {
   .codename = "a33x",
   .full_name = "Galaxy A33 5G",
+  .nfc_chip = "SLSI",
   .adaptive_rr = true,
   .udfps = true,
 };
@@ -41,6 +44,7 @@ static const device_info_t a33x = {
 static const device_info_t a53x = {
   .codename = "a53x",
   .full_name = "Galaxy A53 5G",
+  .nfc_chip = "SLSI",
   .adaptive_rr = true,
   .udfps = true,
 };
@@ -48,6 +52,7 @@ static const device_info_t a53x = {
 static const device_info_t f34x = {
   .codename = "f34x",
   .full_name = "Galaxy F34 5G",
+  .nfc_chip = "ST",
   .adaptive_rr = true,
   .side_fp = true,
 };
@@ -65,6 +70,7 @@ static const device_info_t gta4xlswifi = {
 static const device_info_t m33x = {
   .codename = "m33x",
   .full_name = "Galaxy M33 5G",
+  .nfc_chip = "NXP",
   .adaptive_rr = true,
   .side_fp = true,
 };
@@ -72,6 +78,7 @@ static const device_info_t m33x = {
 static const device_info_t m34x = {
   .codename = "m34x",
   .full_name = "Galaxy M34 5G",
+  .nfc_chip = "ST",
   .adaptive_rr = true,
   .side_fp = true,
 };
@@ -144,7 +151,8 @@ static const variant_info_t a53xdcm = {
   .model = "SC-53C",
   .name = "a53xdcm",
   .build_fingerprint = "samsung/a53xdcm/essi:15/AP3A.240905.015.A2/SC53COMU1DYF2:user/release-keys",
-  .build_desc = "a53xdcm-user 15 AP3A.240905.015.A2 SC53COMU1DYF2 release-keys"
+  .build_desc = "a53xdcm-user 15 AP3A.240905.015.A2 SC53COMU1DYF2 release-keys",
+  .nfc_chip = "NXP",
 };
 
 static const variant_info_t a53xksx = {

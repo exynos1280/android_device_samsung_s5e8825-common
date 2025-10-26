@@ -16,6 +16,7 @@ typedef struct variant_info {
   std::string name;
   std::string build_fingerprint;
   std::string build_desc;
+  std::string nfc_chip;
 } variant_info_t;
 
 void search_variant(const std::vector<variant_info_t> variants);

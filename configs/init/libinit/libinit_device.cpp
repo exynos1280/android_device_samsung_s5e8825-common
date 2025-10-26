@@ -46,4 +46,8 @@ void set_device_props(const device_info_t device) {
     property_override("ro.vendor.fingerprint.force_calibrate", "true");
     property_override("ro.vendor.fingerprint.request_touch_event", "true");
   }
+
+  if (!device.nfc_chip.empty()) {
+    property_override("ro.vendor.nfc.feature.chipname", device.nfc_chip);
+  }
 }
