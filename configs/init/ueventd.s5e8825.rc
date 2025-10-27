@@ -189,10 +189,6 @@
 /dev/tzirs                0660   system     system
 /dev/tuihw                0660   system     system
 
-# Mobicore
-#/dev/mobicore             0600   system     system
-#/dev/mobicore-user        0666   system     drmrpc
-
 # Secure MEM driver
 /dev/s5p-smem             0660   system     system
 
