@@ -169,8 +169,6 @@ vendor/etc/init/android.hardware.security.keymint-service.samsung.rc|f74c12bda6b
 # Security - PROCA
 vendor/app/mcRegistry/00060308060501020000000000000000.tabin
 vendor/app/mcRegistry/0706000000000000000000000000004d.tlbin
-vendor/bin/vendor.samsung.hardware.security.proca@2.0-service
-vendor/etc/init/pa_daemon_teegris.rc
 
 # Security - TEEgris
 vendor/bin/tzdaemon
