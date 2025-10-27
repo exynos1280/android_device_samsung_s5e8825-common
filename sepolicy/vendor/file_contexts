@@ -100,9 +100,6 @@
 /sys/kernel/exynos_pm_qos/gpu_freq_max                                                      u:object_r:sysfs_performance:s0
 /sys/devices/platform/10300000\.mali/highspeed_(clock|load|delay)                           u:object_r:sysfs_performance:s0
 
-# Proca
-/vendor/bin/vendor\.samsung\.hardware\.security\.proca@2\.0-service                         u:object_r:hal_proca_default_exec:s0
-
 # Secmem
 /dev/s5p-smem                                                                               u:object_r:secmem_device:s0
 
@@ -119,9 +116,6 @@
 /vendor/bin/hermesd                                                                         u:object_r:hermesd_exec:s0
 /vendor/hw/vendor\.samsung\.hardware\.security\.hermes-service                              u:object_r:hermesd_exec:s0
 /vendor/etc/secnvm(/.*)?                                                                    u:object_r:secnvm_vendor_etc_file:s0
-
-# Vaultkeeper
-/vendor/bin/vaultkeeperd                                                                    u:object_r:vaultkeeperd_exec:s0
 
 # ZRAM
 /dev/block/zram0                                                                            u:object_r:swap_block_device:s0

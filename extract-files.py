@@ -99,11 +99,7 @@ blob_fixups: blob_fixups_user_type = {
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim')
         .remove_needed('libhidltransport.so'),
     # Vaultkeeper
-    (
-        'vendor/bin/vaultkeeperd',
-        'vendor/lib64/libvkmanager_vendor.so',
-        'vendor/lib64/libvkservice.so',
-    ): blob_fixup()
+    'vendor/lib64/libvkmanager_vendor.so': blob_fixup()
         .binary_regex_replace(rb'ro\.factory\.factory_binary', b'ro.vendor.factory_binary\x00'),
 }  # fmt: skip
 

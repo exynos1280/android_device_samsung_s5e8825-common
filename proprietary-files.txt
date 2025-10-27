@@ -149,15 +149,13 @@ vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so|253e1ee51bba7e8a6
 vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so|a2f0be5b802aa317d05f388b44a8b1917b02cfd7
 
 # RIL - Dependencies - from a55x - A556EXXSABYI3
-vendor/bin/cass|efa7d9c8b6114f08184e2a5af792343b9501bc90
-vendor/etc/init/cass.rc|965838732854fc12d687fde4cd407e876047e592
 vendor/etc/mtu-conf.xml|5bac5f518c1573e774758d2133518cc227134099
 vendor/lib64/libengmode_client.so|29f285027dc728d20eaa794d9f39a2fcdb4dd90c
 vendor/lib64/libfloatingfeature.so|764ca3e2137a0e0e936743192223ebfa61479fd0
 vendor/lib64/libprotobuf-cpp-full-21.7.so|24ae91e4333a44a3f1646af92c90d63e58a57956
 vendor/lib64/libsecnativefeature.so|984289af7a89aec3d3a9ac31a5418c948f69cba1
 vendor/lib64/libsemnativecarrierfeature.so|3a8102145028c96e7120ca5cb49b56b0f4b91f32
-vendor/lib64/libvk_cass_interface.so|8c504dfd4c1bcd920fdd06e29949d6dcbbb7d4a2
+vendor/lib64/libvkmanager_vendor.so|bc65170c3207a897e29f7c3ee4c590b733db5de2|78c51eca85aa0ff01953c84f0c87c0b767d7030a
 
 # Security - Keymint
 vendor/bin/hw/android.hardware.security.keymint-service:vendor/bin/hw/android.hardware.security.keymint-service.samsung
@@ -168,25 +166,12 @@ vendor/lib64/vendor.samsung.hardware.keymint-V1-ndk_platform.so
 # Security - Keymint - Patched Init
 vendor/etc/init/android.hardware.security.keymint-service.samsung.rc|f74c12bda6b1446a61519999d06bf04f3340ba28
 
-# Security - PROCA
-vendor/app/mcRegistry/00060308060501020000000000000000.tabin
-vendor/app/mcRegistry/0706000000000000000000000000004d.tlbin
-vendor/bin/vendor.samsung.hardware.security.proca@2.0-service
-vendor/etc/init/pa_daemon_teegris.rc
-
 # Security - TEEgris
 vendor/bin/tzdaemon
 vendor/bin/tzts_daemon
 vendor/etc/init/teegris_v4.rc
 vendor/lib64/libteecl.so
 vendor/lib64/libuuid.so;MODULE_SUFFIX=_vendor
-
-# Security - Vaultkeeper - from a25x - A256EXXS8CYG3
-vendor/bin/vaultkeeperd|64bf000e4d58c43a1f23220e5b07a8bc4e37a951|b662faa8b5180ad4a3756310e21c7194b38634b5
-vendor/etc/init/vaultkeeper_common.rc|5fa623fe813eaf19b658257ce9fea94ba8acd1f4
-vendor/lib64/libstork_shared.so|a141efe0b67d1ad8252dfa9780e65e4ad64656f6
-vendor/lib64/libvkmanager_vendor.so|e539d707d927ec0efb7eea2d421e60a431c336ff|f872402eee7505b4e7d1958bed7bf6bfb2d4d3f5
-vendor/lib64/libvkservice.so|85fcac9c71a05af9792adb99992acace44e27a60|fe537335d588530413f841dbed70e36bdec8b370
 
 # Sensors
 vendor/etc/sensors/hals.conf
