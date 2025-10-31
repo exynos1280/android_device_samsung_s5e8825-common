@@ -157,6 +157,14 @@ static const variant_info_t a53xdcm = {
   .nfc_chip = "NXP",
 };
 
+static const variant_info_t a53xkdi = {
+  .model = "SCG15",
+  .name = "a53xkdi",
+  .build_fingerprint = "samsung/a53xkdi/essi:15/AP3A.240905.015.A2/SCG15KDU1DYF1:user/release-keys",
+  .build_desc = "a53xkdi-user 15 AP3A.240905.015.A2 SCG15KDU1DYF1 release-keys",
+  .nfc_chip = "NXP",
+};
+
 static const variant_info_t a53xksx = {
   .model = "SM-A536N",
   .name = "a53xksx",
@@ -236,6 +244,7 @@ static const std::vector<variant_info_t> variants = {
   a33xub,
   a33xzh,
   a53xdcm,
+  a53xkdi,
   a53xksx,
   a53xnsxx,
   a53xzc,
