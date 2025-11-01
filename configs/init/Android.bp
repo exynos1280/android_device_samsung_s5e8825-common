@@ -31,6 +31,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.s5e8825.camera.rc",
+    src: "init.s5e8825.camera.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.s5e8825.fingerprint.rc",
     src: "init.s5e8825.fingerprint.rc",
     sub_dir: "init",
