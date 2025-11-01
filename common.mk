@@ -156,7 +156,6 @@ PRODUCT_PACKAGES += \
     fstab.s5e8825 \
     init.s5e8825.rc \
     init.s5e8825.recovery.rc \
-    init.s5e8825.usb.rc \
     ueventd.s5e8825.rc
 
 PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/init/fstab.s5e8825:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.s5e8825
@@ -320,6 +319,9 @@ PRODUCT_PACKAGES += \
     android.hardware.usb.gadget-service.samsung
 
 $(call soong_config_set,samsungUsbGadgetVars,gadget_name,13200000.dwc3)
+
+# USB - Init
+PRODUCT_PACKAGES += init.s5e8825.usb.rc
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
