@@ -1,0 +1,104 @@
+on post-fs-data
+    # Permissions for Camera
+    mkdir /data/vendor/camera 0770 cameraserver system
+    chown cameraserver cameraserver /sys/kernel/mm/vmscan/mem_boost_mode
+    chown cameraserver system /sys/class/camera/rear/rear_camfw
+    chown system radio /sys/class/camera/rear/rear_camfw_full
+    chown system radio /sys/class/camera/rear/rear_camfw_all
+    chown system radio /sys/class/camera/rear/rear_checkfw_user
+    chown system radio /sys/class/camera/rear/rear_checkfw_factory
+    chown system radio /sys/class/camera/rear/rear_phy_tune
+    chown system radio /sys/class/camera/rear/rear2_camfw
+    chown system radio /sys/class/camera/rear/rear2_camfw_full
+    chown system radio /sys/class/camera/rear/rear2_checkfw_user
+    chown system radio /sys/class/camera/rear/rear2_checkfw_factory
+    chown system radio /sys/class/camera/rear/rear2_afcal
+    chown system radio /sys/class/camera/rear/rear2_paf_cal_check
+    chown system radio /sys/class/camera/rear/rear2_tilt
+    chown system radio /sys/class/camera/rear/rear2_moduleid
+    chown system radio /sys/class/camera/rear/rear2_phy_tune
+    chown system radio /sys/class/camera/rear/rear3_camtype
+    chown system radio /sys/class/camera/rear/rear3_camfw
+    chown system radio /sys/class/camera/rear/rear3_camfw_full
+    chown system radio /sys/class/camera/rear/rear3_checkfw_user
+    chown system radio /sys/class/camera/rear/rear3_checkfw_factory
+    chown system radio /sys/class/camera/rear/rear3_afcal
+    chown system radio /sys/class/camera/rear/rear3_tilt
+    chown system radio /sys/class/camera/rear/rear3_moduleid
+    chown system radio /sys/class/camera/rear/rear3_phy_tune
+    chown system radio /sys/class/camera/rear/rear_f2_paf_offset_mid
+    chown system radio /sys/class/camera/rear/rear_f2_paf_offset_far
+    chown system radio /sys/class/camera/rear/rear_f2_paf_cal_check
+    chown system system /sys/class/camera/rear/rear2_hwparam
+    chown cameraserver system /sys/class/camera/rear/rear_dualcal
+    chown cameraserver system /sys/class/camera/rear/rear2_dualcal
+    chown cameraserver system /sys/class/camera/rear/rear3_dualcal
+    chown cameraserver system /sys/class/camera/rear/front_dualcal
+    chown system radio /sys/class/camera/rear/rear_sensor_standby
+    chown system radio /sys/class/camera/rear/rear_camtype
+    chown system radio /sys/class/camera/rear/rear_companionfw
+    chown system radio /sys/class/camera/rear/rear_companionfw_full
+    chown system radio /sys/class/camera/rear/rear_calcheck
+    chown system radio /sys/class/camera/rear/rear_afcal
+    chown system radio /sys/class/camera/rear/rear_paf_offset_mid
+    chown system radio /sys/class/camera/rear/rear_paf_offset_far
+    chown system radio /sys/class/camera/rear/rear_paf_cal_check
+    chown system system /sys/class/camera/rear/rear_hwparam
+    chown cameraserver cameraserver /sys/class/camera/rear/rear_sensorid_exif
+    chown cameraserver cameraserver /sys/class/camera/rear/rear2_sensorid_exif
+    chown cameraserver cameraserver /sys/class/camera/rear/rear3_sensorid_exif
+    chown system system /sys/class/camera/rear/rear4_hwparam
+    chown system radio /sys/class/camera/rear/rear4_moduleid
+    chown system radio /sys/class/camera/rear/rear4_afcal
+    chown system radio /sys/class/camera/rear/rear4_paf_cal_check
+    chown system radio /sys/class/camera/rear/rear4_phy_tune
+    chown cameraserver cameraserver /sys/class/camera/rear/ssrm_camera_info
+    chown system radio /sys/class/camera/rear/isp_core
+    chown system radio /sys/class/camera/rear/fw_update
+    chown system radio /sys/class/camera/rear/companion_ic_check
+    chown system radio /sys/class/camera/rear/rear_moduleid
+    chown cameraserver system /sys/class/camera/flash/rear_flash
+    chown cameraserver system /sys/class/camera/flash/flash_state
+    chown system radio /sys/class/camera/front/front_camfw
+    chown system radio /sys/class/camera/front/front_camfw_full
+    chown system radio /sys/class/camera/front/front_checkfw_factory
+    chown system radio /sys/class/camera/front/front_camtype
+    chown system radio /sys/class/camera/front/front_moduleid
+    chown system radio /sys/class/camera/front/front_afcal
+    chown system radio /sys/class/camera/front/front_mipi_clock
+    chown system radio /sys/class/camera/front/front_phy_tune
+    chown system system /sys/class/camera/front/front_hwparam
+    chown cameraserver cameraserver /sys/class/camera/front/front_sensorid_exif
+    chown system radio /sys/class/camera/ois/selftest
+    chown system radio /sys/class/camera/ois/calibrationtest
+    chown system radio /sys/class/camera/ois/ois_noise_stdev
+    chown system radio /sys/class/camera/ois/ois_power
+    chown system radio /sys/class/camera/ois/ois_set_mode
+    chown system radio /sys/class/camera/ois/ois_rawdata
+    chown system radio /sys/class/camera/ois/oisfw
+    chown system radio /sys/class/camera/ois/ois_diff
+    chown system radio /sys/class/camera/ois/autotest
+    chown system radio /sys/class/camera/ois/ois_gain_rear
+    chown system radio /sys/class/camera/ois/ois_gain_rear3
+    chown system radio /sys/class/camera/ois/ois_supperssion_ratio_rear
+    chown system radio /sys/class/camera/ois/ois_supperssion_ratio_rear3
+    chown system radio /sys/class/camera/ois/ois_hall_position
+    chown system radio /sys/class/camera/ois/rear3_read_cross_talk
+    chown system radio /sys/class/camera/ois/ois_ext_clk
+    chown system radio /sys/class/camera/ois/check_cross_talk
+    chown system radio /sys/class/camera/ois/check_hall_cal
+    chown system radio /sys/class/camera/ois/check_ois_valid
+    chown cameraserver cameraserver /sys/class/camera/ois/prevent_shaking_noise
+    chown cameraserver cameraserver /sys/class/camera/ois/ois_exif
+    chown cameraserver cameraserver /sys/class/camera/ois/reset_check
+    chown system radio /sys/class/camera/rear/supported_cameraIds
+    chown system radio /sys/class/camera/rear/rear_aperture_halltest
+    chown cameraserver cameraserver /dev/caminfo
+
+    # Camera Data
+    mkdir /data/vendor/camera 0777 root root
+
+on fs
+    # Permission for flashlight control
+    chmod 0660 /sys/class/camera/flash/rear_flash
+    chown system camera /sys/class/camera/flash/rear_flash
