@@ -1,0 +1,41 @@
+on init
+    # EPIC interfaces
+    chmod 660 /dev/stune/top-app/schedtune.boost
+    chown system system /dev/mode
+    chown system system /dev/exynos-migov
+    chown system system /sys/devices/platform/exynos-migov/control/control_profile
+    chown system system /sys/devices/platform/exynos-migov/control/set_margin
+    chown system system /sys/devices/platform/exynos-migov/control/fragutil_thr
+    chown system system /sys/devices/platform/exynos-migov/migov/running
+    chown system system /dev/cpu_dma_latency
+    chown system system /dev/cluster0_freq_min
+    chown system system /dev/cluster1_freq_min
+    chown system system /dev/cluster0_freq_max
+    chown system system /dev/cluster1_freq_max
+    chown system system /dev/cpu_online_min
+    chown system system /dev/cpu_online_max
+    chown system system /dev/bus_throughput
+    chown system system /dev/bus_throughput_max
+    chown system system /dev/mfc_throughput
+    chown system system /dev/mfc_throughput_max
+    chown system system /dev/gpu_freq_min
+    chmod 0664 /dev/gpu_freq_min
+    chown system system /dev/gpu_freq_max
+    chmod 0664 /dev/gpu_freq_max
+    chown system system /dev/npu_throughput
+    chown system system /dev/npu_throughput_max
+    chown system system /dev/device_throughput
+    chown system system /dev/device_throughput_max
+
+on post-fs-data
+    # EPIC Data
+    mkdir /data/vendor/epic 0771 system system
+
+# EPIC daemon
+service epicd /vendor/bin/epic /vendor/etc/epic.json /vendor/etc/epic_sub.json /vendor/etc/epic_tc.json
+    socket epic dgram 666 system system u:object_r:epicd_socket:s0
+    class main
+    user system
+    group system
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:epicd:s0
