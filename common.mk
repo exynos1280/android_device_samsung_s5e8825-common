@@ -155,7 +155,6 @@ $(call soong_config_set,samsungHealthVars,enable_suspend,false)
 PRODUCT_PACKAGES += \
     fstab.s5e8825 \
     init.s5e8825.rc \
-    init.s5e8825.recovery.rc \
     ueventd.s5e8825.rc
 
 PRODUCT_COPY_FILES += $(COMMON_PATH)/configs/init/fstab.s5e8825:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.s5e8825
@@ -265,6 +264,9 @@ PRODUCT_PACKAGES += android.hardware.power-service.pixel-libperfmgr
 
 # Power - Powerhint
 PRODUCT_PACKAGES += powerhint.json
+
+# Recovery
+PRODUCT_PACKAGES += init.s5e8825.recovery.rc
 
 # RIL
 PRODUCT_PACKAGES += \
