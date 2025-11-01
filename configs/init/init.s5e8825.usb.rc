@@ -151,8 +151,54 @@ on early-boot
 on boot
     write /config/usb_gadget/g1/bcdDevice 0x0414
 
+    # SB HW Param
+    chown system usb /sys/class/usb_notify/usb_control/usb_hw_param
+    chown system usb /sys/class/usb_notify/usb_control/hw_param
+    chmod 0664 /sys/class/usb_notify/usb_control/usb_hw_param
+    chmod 0664 /sys/class/usb_notify/usb_control/hw_param
+
+    # OTG Test
+    chown system radio /sys/class/host_notify/usb_otg/booster
+    chmod 0664 /sys/class/host_notify/usb_otg/booster
+
+    # USB
+    chown root system /sys/class/usb_notify/usb_control/usb_data_enabled
+    chmod 0664 /sys/class/usb_notify/usb_control/usb_data_enabled
+
+    # Permissions for USB
+    chown system usb /sys/class/usb_notify/usb_control/whitelist_for_mdm
+    chown radio system /efs/usb_hw_param
+    chown system system /efs/usb_hw_param/usb_hw_param.log
+    chown system usb /sys/class/usb_notify/usb_control/disable
+    chmod 771 /efs/usb_hw_param
+    chmod 0660 /efs/usb_hw_param/usb_hw_param.log
+    chmod 0664 /sys/class/usb_notify/usb_control/whitelist_for_mdm
+    chmod 0664 /sys/class/usb_notify/usb_control/disable
+
+    # Permission for USB - Select
+    chown system system /sys/class/android_usb/android0/enable
+    chown system system /sys/class/android_usb/android0/idVendor
+    chown system system /sys/class/android_usb/android0/idProduct
+    chown system system /sys/class/android_usb/android0/f_diag/clients
+    chown system system /sys/class/android_usb/android0/functions
+    chown system system /sys/class/android_usb/android0/bDeviceClass
+    chmod 0660 /sys/class/android_usb/android0/enable
+    chmod 0660 /sys/class/android_usb/android0/idVendor
+    chmod 0660 /sys/class/android_usb/android0/idProduct
+    chmod 0660 /sys/class/android_usb/android0/f_diag/clients
+    chmod 0660 /sys/class/android_usb/android0/functions
+    chmod 0660 /sys/class/android_usb/android0/bDeviceClass
+
     # Use USB Gadget HAL
     setprop sys.usb.configfs 2
+
+on post-fs-data
+    # Permissions for USB conn_gadget device
+    chown system system /dev/android_ssusbcon
+    chmod 0660 /dev/android_ssusbcon
+
+    # Set prop for USB controller
+    setprop sys.usb.controller 13200000.dwc3
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idProduct 0x4EE7
