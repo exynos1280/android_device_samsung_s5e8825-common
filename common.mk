@@ -131,7 +131,7 @@ PRODUCT_PACKAGES += fastbootd
 PRODUCT_PACKAGES += android.hardware.biometrics.fingerprint-service.s5e8825
 
 # Fingerprint - Init
-PRODUCT_PACKAGES += init.fingerprint.rc
+PRODUCT_PACKAGES += init.s5e8825.fingerprint.rc
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -139,7 +139,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service
 
 # GPS - Init
-PRODUCT_PACKAGES += init.gps.rc
+PRODUCT_PACKAGES += init.s5e8825.gps.rc
 
 # Graphics
 $(call soong_config_set,exynos_hwc,force_client_video,true)
@@ -279,7 +279,7 @@ $(call soong_config_set,cbd,protocol,sipc)
 PRODUCT_PACKAGES += sehradiomanager.conf
 
 # RIL - Init
-PRODUCT_PACKAGES += init.ril.rc
+PRODUCT_PACKAGES += init.s5e8825.ril.rc
 
 # Samsung DAP
 PRODUCT_PACKAGES += SamsungDAP-custom
@@ -289,7 +289,7 @@ PRODUCT_PACKAGES += android.hardware.sensors-service.samsung-multihal
 PRODUCT_PACKAGES += libshim_sensorndkbridge
 
 # Sensors - Init
-PRODUCT_PACKAGES += init.sensorhub.rc
+PRODUCT_PACKAGES += init.s5e8825.sensors.rc
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -340,7 +340,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf
 
 # Wi-Fi - Init
-PRODUCT_PACKAGES += init.wifi.rc
+PRODUCT_PACKAGES += init.s5e8825.wifi.rc
 
 # Vibrator
 PRODUCT_PACKAGES += android.hardware.vibrator-service.samsung
