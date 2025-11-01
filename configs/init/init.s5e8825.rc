@@ -133,34 +133,6 @@ on init
     copy /dev/cpuset/mems /dev/cpuset/foreground-boost/mems
     write /dev/cpuset/foreground-boost/cpus 0-7
 
-    # EPIC interfaces
-    chmod 660 /dev/stune/top-app/schedtune.boost
-    chown system system /dev/mode
-    chown system system /dev/exynos-migov
-    chown system system /sys/devices/platform/exynos-migov/control/control_profile
-    chown system system /sys/devices/platform/exynos-migov/control/set_margin
-    chown system system /sys/devices/platform/exynos-migov/control/fragutil_thr
-    chown system system /sys/devices/platform/exynos-migov/migov/running
-    chown system system /dev/cpu_dma_latency
-    chown system system /dev/cluster0_freq_min
-    chown system system /dev/cluster1_freq_min
-    chown system system /dev/cluster0_freq_max
-    chown system system /dev/cluster1_freq_max
-    chown system system /dev/cpu_online_min
-    chown system system /dev/cpu_online_max
-    chown system system /dev/bus_throughput
-    chown system system /dev/bus_throughput_max
-    chown system system /dev/mfc_throughput
-    chown system system /dev/mfc_throughput_max
-    chown system system /dev/gpu_freq_min
-    chmod 0664 /dev/gpu_freq_min
-    chown system system /dev/gpu_freq_max
-    chmod 0664 /dev/gpu_freq_max
-    chown system system /dev/npu_throughput
-    chown system system /dev/npu_throughput_max
-    chown system system /dev/device_throughput
-    chown system system /dev/device_throughput_max
-
     # Apply network parameters for high data performance.
     write /proc/sys/net/core/rmem_default 327680
     write /proc/sys/net/core/rmem_max 8388608
@@ -312,9 +284,6 @@ on post-fs-data
     # Eden Data
     mkdir /data/vendor/eden 0771 system system
     mkdir /data/vendor/eden/gpu 0771 system system
-
-    # EPIC Data
-    mkdir /data/vendor/epic 0771 system system
 
     # Permissions for USB conn_gadget device
     chown system system /dev/android_ssusbcon
@@ -1171,15 +1140,6 @@ service watchdogd /system/bin/watchdogd 10 20
     class core
     oneshot
     seclabel u:r:watchdogd:s0
-
-    # EPIC daemon
-    service epicd /vendor/bin/epic /vendor/etc/epic.json /vendor/etc/epic_sub.json /vendor/etc/epic_tc.json
-    socket epic dgram 666 system system u:object_r:epicd_socket:s0
-    class main
-    user system
-    group system
-    writepid /dev/cpuset/system-background/tasks
-    seclabel u:r:epicd:s0
 
 on property:ro.boot.slot_suffix=*
     setprop vendor.cbd.partition modem${ro.boot.slot_suffix}

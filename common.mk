@@ -133,6 +133,9 @@ PRODUCT_PACKAGES += \
     vendor.samsung_slsi.hardware.epic@1.0-impl \
     vendor.samsung_slsi.hardware.epic@1.0-service
 
+# EPIC - Init
+PRODUCT_PACKAGES += init.s5e8825.epic.rc
+
 # fastbootd
 PRODUCT_PACKAGES += fastbootd
 
