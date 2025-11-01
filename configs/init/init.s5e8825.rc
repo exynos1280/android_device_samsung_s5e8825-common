@@ -35,9 +35,6 @@ on init
     write /sys/block/sda/queue/nr_requests 64
     write /dev/sys/fs/by-name/userdata/iostat_enable 0
 
-    # SCSC BT
-    chown bluetooth bluetooth /sys/module/scsc_bt/parameters/bluetooth_address
-
     # Change CPUFreq governor to EGO
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor energy_aware
     write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor energy_aware
@@ -297,15 +294,6 @@ on post-fs-data
     # GNSS data
     mkdir /data/vendor/gps 0771 system system
     mkdir /data/vendor/log/gps 0771 system system
-
-    # Permissions for Bluetooth
-    setprop ro.bt.bdaddr_path "/mnt/vendor/efs/bluetooth/bt_addr"
-    chown bluetooth bluetooth ro.bt.bdaddr_path
-    mkdir /mnt/vendor/efs/bluetooth 0770 system bluetooth
-    chown system bluetooth /mnt/vendor/efs/bluetooth
-    chown system bluetooth /mnt/vendor/efs/bluetooth/bt_addr
-    chmod 0770 /mnt/vendor/efs/bluetooth
-    chmod 0660 /mnt/vendor/efs/bluetooth/bt_addr
 
     # Permissions for GNSS
     chown system system /dev/gnss_ipc

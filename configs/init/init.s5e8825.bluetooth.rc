@@ -1,0 +1,11 @@
+on init
+    chown bluetooth bluetooth /sys/module/scsc_bt/parameters/bluetooth_address
+
+on post-fs-data
+    mkdir /mnt/vendor/efs/bluetooth 0770 system bluetooth
+    setprop ro.bt.bdaddr_path "/mnt/vendor/efs/bluetooth/bt_addr"
+    chown bluetooth bluetooth ro.bt.bdaddr_path
+    chown system bluetooth /mnt/vendor/efs/bluetooth
+    chown system bluetooth /mnt/vendor/efs/bluetooth/bt_addr
+    chmod 0770 /mnt/vendor/efs/bluetooth
+    chmod 0660 /mnt/vendor/efs/bluetooth/bt_addr

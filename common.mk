@@ -73,6 +73,9 @@ PRODUCT_COPY_FILES += \
     hardware/samsung_slsi/libbt/conf/bt_did.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_did.conf \
     hardware/samsung_slsi/libbt/conf/bt_vendor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor.conf
 
+# Bluetooth - Init
+PRODUCT_PACKAGES += init.s5e8825.bluetooth.rc
+
 # Camera
 PRODUCT_PACKAGES += android.hardware.camera.provider-service.samsung
 
