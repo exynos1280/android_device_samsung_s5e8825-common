@@ -31,7 +31,7 @@ COMMON_PATH := device/samsung/s5e8825-common
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@7.0-impl \
+    android.hardware.audio@7.1-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service:64 \
     android.hardware.bluetooth.audio-impl \
