@@ -91,7 +91,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.nfc-service\.st                           u:object_r:hal_nfc_default_exec:s0
 /dev/pn547                                                                                  u:object_r:nxp_nfc_device:s0
 /dev/st21nfc                                                                                u:object_r:nfc_device:s0
-/dev/sec-nfc                                                                                u:object_r:nfc_device:s0
 
 # Performance Control Nodes
 /sys/devices/system/cpu/cpufreq/policy[0-9]+/(scaling_min_freq|scaling_max_freq)            u:object_r:sysfs_performance:s0
