@@ -1,4 +1,4 @@
-# Common proprietary files - from Samsung package version A536BXXSHFYI1 unless pinned
+# Common proprietary files - from Samsung package version A536BXXSHGYJ3, unless pinned
 
 # Audio - from a14x - A146BXXS9DYH1
 vendor/bin/hw/secaudiohalaidl|f1f0c148e44e90c26be01e67cc45eb05b2190fc5
@@ -178,11 +178,13 @@ vendor/lib64/sensors.grip.so
 vendor/lib64/sensors.inputvirtual.so
 vendor/lib64/sensors.sensorhub.so
 
-# Wi-Fi
+# Wi-Fi - Firmware
+vendor/firmware/wifi/mx140.bin
+vendor/firmware/wifi/mx140_t.bin
+vendor/firmware/wifi/mx140_t_common.hcf
+
+# Wi-Fi - Init
 vendor/etc/init/wifi_slsi.rc
-vendor/etc/wifi/mx140.bin
-vendor/etc/wifi/mx140_t.bin
-vendor/etc/wifi/mx140_t_common.hcf
 
 # VNDK - from prebuilts/vndk/v33 - android-15.0.0_r32
 vendor/lib64/libcrypto-tm.so;FIX_SONAME|7291c0e41fa86b3739df0c0c20de21e88f43661a|f53b9d897921ade77c511eb98955db374fcc5c69
