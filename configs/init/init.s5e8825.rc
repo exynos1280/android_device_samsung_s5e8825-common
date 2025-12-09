@@ -89,49 +89,23 @@ on init
     write /dev/stune/schedtune.boost 0
 
     # CPUSET (s5e8825)
-    mkdir /dev/cpuset/sf
-    copy /dev/cpuset/cpus /dev/cpuset/sf/cpus
-    copy /dev/cpuset/mems /dev/cpuset/sf/mems
     chown system system /dev/cpuset/top-app/cpus
     chown system system /dev/cpuset/foreground/cpus
     chown system system /dev/cpuset/background/cpus
     chown system system /dev/cpuset/system-background/cpus
     chown system system /dev/cpuset/restricted/cpus
-    chown system system /dev/cpuset/sf/tasks
-    chown system system /dev/cpuset/sf/cgroup.procs
-    chown system system /dev/cpuset/sf/cpus
-    chown system system /dev/cpuset/sf/cpus
     chown system system /dev/cpuset/tasks
     chown system system /dev/cpuset/cgroup.procs
-    chmod 0664 /dev/cpuset/sf/cpus
     chmod 0664 /dev/cpuset/tasks
     chmod 664 /dev/cpuset/top-app/cpus
     chmod 664 /dev/cpuset/foreground/cpus
     chmod 664 /dev/cpuset/background/cpus
     chmod 664 /dev/cpuset/system-background/cpus
     chmod 664 /dev/cpuset/restricted/cpus
-    write /dev/cpuset/sf/cpus 0-7
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-4,6-7
     write /dev/cpuset/background/cpus 0-3
     write /dev/cpuset/system-background/cpus 0-3
-
-    # Foreground Boost
-    mkdir /dev/cpuset/foreground-boost
-    copy /dev/cpuset/cpus /dev/cpuset/foreground-boost/cpus
-    copy /dev/cpuset/mems /dev/cpuset/foreground-boost/mems
-    chown system system /dev/cpuset/foreground-boost
-    chown system system /dev/cpuset/foreground-boost/tasks
-    chown system system /dev/cpuset/foreground-boost/cgroup.procs
-    chmod 0664 /dev/cpuset/foreground-boost/tasks
-    chmod 0664 /dev/cpuset/foreground-boost/cgroup.procs    
-    chown system system /dev/cpuset/foreground/cpus
-    chown system system /dev/cpuset/foreground-boost/cpus
-    chmod 0664 /dev/cpuset/foreground/cpus
-    chmod 0664 /dev/cpuset/foreground-boost/cpus
-    copy /dev/cpuset/cpus /dev/cpuset/foreground-boost/cpus
-    copy /dev/cpuset/mems /dev/cpuset/foreground-boost/mems
-    write /dev/cpuset/foreground-boost/cpus 0-7
 
     # Clear sched_util_clamp_min_rt_default
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
@@ -1121,7 +1095,6 @@ on property:sys.boot_completed=1
 
     write /dev/cpuset/system-background/cpus 6-7
     write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/sf/cpus 6-7
 
     # Batteru
     write /sys/class/power_supply/battery/boot_completed "1"
