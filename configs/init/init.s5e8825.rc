@@ -373,24 +373,6 @@ on early-boot
     verity_update_state
 
 on boot
-    # SDHMS Slowdown : Cpuset
-    mkdir /dev/cpuset/abnormal
-    write /dev/cpuset/abnormal/cpus 0-3
-    copy /dev/cpuset/mems /dev/cpuset/abnormal/mems
-    chown system system /dev/cpuset/abnormal
-    chown system system /dev/cpuset/abnormal/tasks
-    chown system system /dev/cpuset/abnormal/cpus
-    mkdir /dev/cpuset/moderate
-    write /dev/cpuset/moderate/cpus 0-2
-    copy /dev/cpuset/mems /dev/cpuset/moderate/mems
-    chown system system /dev/cpuset/moderate
-    chown system system /dev/cpuset/moderate/tasks
-    chown system system /dev/cpuset/moderate/cpus
-    chmod 0664 /dev/cpuset/abnormal/tasks
-    chmod 0664 /dev/cpuset/abnormal/cpus
-    chmod 0664 /dev/cpuset/moderate/tasks
-    chmod 0664 /dev/cpuset/moderate/cpus
-
     # Watermark
     write /proc/sys/vm/watermark_scale_factor 200
 
