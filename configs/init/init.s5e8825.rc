@@ -1138,7 +1138,6 @@ on property:sys.boot_completed=1
     write /sys/devices/platform/13500000.ufs/auto_hibern8 2000
 
     write /dev/cpuset/system-background/cpus 6-7
-    write /dev/cpuset/foreground/cpus 0-5
     write /dev/cpuset/background/cpus 0-1
     write /dev/cpuset/sf/cpus 6-7
 
