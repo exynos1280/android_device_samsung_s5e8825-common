@@ -29,6 +29,9 @@ $(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
 
 COMMON_PATH := device/samsung/s5e8825-common
 
+# XT MAGYAR HAHHHAHHAHAHHAHKHEJLFSHJJHFHJSFEHKASFKFHK
+PRODUCT_COPY_FILES += $(COMMON_PATH)/init.debug.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.debug.rc
+ 
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
@@ -80,14 +83,11 @@ PRODUCT_PACKAGES += init.s5e8825.bluetooth.rc
 PRODUCT_PACKAGES += android.hardware.camera.provider-service.samsung
 
 $(call soong_config_set,samsungCameraVars,extra_ids,60)
-$(call soong_config_set,samsungCameraVars,needs_sec_reserved_field,true)
-$(call soong_config_set,samsungCameraVars,usage_64bit,true)
+$(call soong_config_set_bool,samsungCameraVars,needs_sec_reserved_field,true)
+$(call soong_config_set_bool,samsungCameraVars,usage_64bit,true)
 
 # Camera - Init
 PRODUCT_PACKAGES += init.s5e8825.camera.rc
-
-# Camera - Shims
-PRODUCT_PACKAGES += libvpl
 
 # Charger
 PRODUCT_PACKAGES += charger_res_images_vendor
@@ -103,8 +103,6 @@ PRODUCT_PACKAGES += \
     libExynosC2Vp8Enc \
     codec2.vendor.base.policy \
     codec2.vendor.ext.policy
-
-$(call soong_config_set_bool,openmax,UNSUPPORT_10BIT,true)
 
 # ConfigStore
 PRODUCT_PACKAGES += disable_configstore
@@ -142,9 +140,6 @@ PRODUCT_PACKAGES += \
 
 # GPS - Init
 PRODUCT_PACKAGES += init.s5e8825.gps.rc
-
-# Graphics
-$(call soong_config_set_bool,exynos_hwc,force_client_video,true)
 
 # Health
 PRODUCT_PACKAGES += \
@@ -197,9 +192,6 @@ PRODUCT_PACKAGES += public.libraries.txt
 ifneq ($(TARGET_DEVICE),m33x)
 PRODUCT_PACKAGES += vendor.lineage.livedisplay-service.samsung-exynos
 endif
-
-# Log Tag
-include $(COMMON_PATH)/configs/vendor_logtag.mk
 
 # Media
 PRODUCT_PACKAGES += \
