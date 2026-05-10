@@ -10,3 +10,8 @@ soong_namespace {
         "vendor/samsung/s5e8825-common",
     ],
 }
+
+cc_library_headers {
+    name: "audio_proxy_headers",
+    export_include_dirs: ["include"],
+}

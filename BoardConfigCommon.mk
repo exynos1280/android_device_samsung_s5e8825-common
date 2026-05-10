@@ -180,7 +180,7 @@ BOARD_ROOT_EXTRA_FOLDERS := efs
 # Platform
 BOARD_VENDOR := samsung
 PRODUCT_USES_QCOM_HARDWARE := false
-TARGET_BOARD_PLATFORM := erd8825
+TARGET_BOARD_PLATFORM := s5e8825
 TARGET_BOOTLOADER_BOARD_NAME := s5e8825
 TARGET_SOC := s5e8825
 include hardware/samsung_slsi-linaro/config/BoardConfig8825.mk
