@@ -617,7 +617,7 @@ struct pcm_config pcm_config_call_record = {
 };
 
 // PCM Configurations for FM Radio Recording Stream
-#define FM_RECORD_CARD                  SOUND_CARD1
+#define FM_RECORD_CARD                  SOUND_CARD0
 #define FM_RECORD_DEVICE                SOUND_DEVICE_VIRT_FM_RECORD
 
 #define FM_RECORD_CHANNELS              DEFAULT_FM_REC_CHANNELS
