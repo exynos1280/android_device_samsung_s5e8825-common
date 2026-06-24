@@ -553,7 +553,7 @@ struct pcm_config pcm_config_quad_mic_voicetx_capture = {
 
 // PCM Configurations for FM Radio/Voice Call Capture Stream
 #define VC_FMRADIO_CAPTURE_CARD            SOUND_CARD0
-#define VC_FMRADIO_CAPTURE_DEVICE          SOUND_DEVICE_ABOX_RDMA10
+#define VC_FMRADIO_CAPTURE_DEVICE          SOUND_DEVICE_ABOX_WDMA2
 
 #define VC_FMRADIO_CAPTURE_CHANNELS        DEFAULT_MEDIA_CHANNELS
 #define VC_FMRADIO_CAPTURE_SAMPLING_RATE   DEFAULT_MEDIA_SAMPLING_RATE
