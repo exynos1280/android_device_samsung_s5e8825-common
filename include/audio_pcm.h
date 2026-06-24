@@ -620,6 +620,12 @@ struct pcm_config pcm_config_call_record = {
 #define FM_RECORD_CARD                  SOUND_CARD0
 #define FM_RECORD_DEVICE                SOUND_DEVICE_VIRT_FM_RECORD
 
+/* FM tuner gain boost for low VPCMIN capture level */
+#define FM_TUNER_GAIN_BOOST             256
+
+/* FM tuner backdoor mixer control to disconnect after capture opens */
+#define FM_TUNER_BACKDOOR_MIXER         "ABOX BD_SRCCOM6_A"
+
 #define FM_RECORD_CHANNELS              DEFAULT_FM_REC_CHANNELS
 #define FM_RECORD_SAMPLING_RATE         DEFAULT_FM_REC_SAMPLINGRATE
 #define FM_RECORD_PERIOD_SIZE           DEFAULT_FM_REC_PERIODSIZE
