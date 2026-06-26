@@ -75,7 +75,7 @@ $(call soong_config_set_bool,exynos_audio,use_sec_audio_dynamic_nrec,true)
 $(call soong_config_set_bool,exynos_audio,use_sec_audio_samsungrecord,true)
 $(call soong_config_set_bool,exynos_audio,use_sec_audio_support_gamechat_spk_aec,true)
 $(call soong_config_set_bool,exynos_audio,use_sec_audio_support_listenback_dspeffect,true)
-$(call soong_config_set_bool,exynos_audio,use_usb_offload,true)
+$(call soong_config_set_bool,exynos_audio,use_usb_offload,false)
 
 # Bluetooth
 PRODUCT_PACKAGES += \
