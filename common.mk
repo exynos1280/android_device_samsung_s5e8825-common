@@ -42,6 +42,9 @@ PRODUCT_PACKAGES += \
 
 TARGET_EXCLUDES_AUDIOFX := true
 
+# AxionFX
+$(call inherit-product-if-exists, packages/apps/AxionFx/config.mk)
+
 PRODUCT_PACKAGES += \
     tinymix \
     tinycap
