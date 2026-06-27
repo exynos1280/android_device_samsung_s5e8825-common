@@ -62,7 +62,7 @@ prebuilt_etc {
     name: "init.s5e8825.recovery.rc",
     src: "init.s5e8825.recovery.rc",
     sub_dir: "init",
-    vendor: true,
+    recovery: true,
 }
 
 prebuilt_etc {
