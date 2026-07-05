@@ -110,7 +110,7 @@ PRODUCT_PACKAGES += charger_res_images_vendor
 
 # Codec2
 PRODUCT_PACKAGES += \
-    samsung.hardware.media.c2@1.2-service \
+    samsung.hardware.media.c2-service \
     libExynosC2H264Dec \
     libExynosC2H264Enc \
     libExynosC2HevcDec \
