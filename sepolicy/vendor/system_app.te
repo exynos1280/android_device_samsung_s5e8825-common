@@ -1,3 +1,7 @@
 allow system_app fm_device:chr_file { read write open ioctl };
 allow system_app hal_fingerprint_default:binder call;
 allow system_app sysfs_zram:file { getattr open read };
+
+allow system_app sysfs_sec_touchscreen:dir search;
+allow system_app sysfs_touchscreen_writable:file rw_file_perms;
+
