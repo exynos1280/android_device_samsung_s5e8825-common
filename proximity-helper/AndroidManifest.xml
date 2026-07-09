@@ -37,6 +37,7 @@
 
         <service
             android:name=".ProximityHelperService"
+            android:directBootAware="true"
             android:exported="false" />
     </application>
 </manifest>
