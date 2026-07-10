@@ -70,9 +70,6 @@ exynos-wow.ko
 exynos-bcm.ko
 exynos_thermal.ko
 exynos_devfreq.ko
-exynos-btsops8825.ko
-exynos-bts.ko
-mali_kbase.ko
 xperf.ko
 mcu_ipc.ko
 cpif_page.ko
@@ -80,6 +77,8 @@ exynos_dit.ko
 usb_f_dm.ko
 direct_dm.ko
 hook.ko
+exynos-btsops8825.ko
+exynos-bts.ko
 cpif.ko
 gnss_mbox.ko
 gnssif.ko
@@ -114,6 +113,10 @@ mcd-panel-decon.ko
 exynos-drm-decon.ko
 mcd-panel-samsung-helper-decon.ko
 mcd-panel-samsung-drv-decon.ko
+mali_kbase.ko
+mali_kbase_r32p1.ko
+mali_kbase_r38p1.ko
+mali_kbase_r44p1.ko
 scsc_logring.ko
 scsc_platform_mif.ko
 scsc_mx.ko
