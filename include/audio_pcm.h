@@ -43,14 +43,22 @@
 // Devices 20 & 21 are used by VTS driver
 #define SOUND_DEVICE_AUX 22  // Aux Digital Device for DP Audio
 
+// Sound Devices using Virtual PCM DAIs with sound-card0
+//
+// Playback devices
+#define SOUND_DEVICE_VIRT_PRIMARY_PLAYBACK 100  // primary playback virtual device
+#define SOUND_DEVICE_VIRT_AAUDIO_PLAYBACK 102   // AAudio playback virtual device
+#define SOUND_DEVICE_VIRT_VRX_PLAYBACK 104      // CP Voice Rx playback virtual device
+#define SOUND_DEVICE_VIRT_FM_RMIC_PLAYBACK 106  // Looped data from FM-Booster or RMic solution components
+#define SOUND_DEVICE_VIRT_MUTE_PLAYBACK 107     // Dummy Mute playback virtual device
+
 // Capture devices
-#define SOUND_DEVICE_VIRT_PRIMARY_CAPTURE 20  // primary capture virtual device
-
-#define SOUND_DEVICE_CALL_RX 104  // WDMA for Call RX
-#define SOUND_DEVICE_CALL_TX 113  // WDMA for Call TX
-
-#define SOUND_DEVICE_CALL_RECORD 115  // WDMA for Call Recording
-// FIXME: Check below node numbers again
+#define SOUND_DEVICE_VIRT_PRIMARY_CAPTURE 110     // primary capture virtual device
+#define SOUND_DEVICE_VIRT_LOWLATENCY_CAPTURE 111  // low-latency capture virtual device
+#define SOUND_DEVICE_VIRT_MMAP_CAPTURE 112        // MMAP capture virtual device
+#define SOUND_DEVICE_VIRT_VTX_CAPTURE 113         // Voice call TX virtual device
+#define SOUND_DEVICE_CALL_RECORD 115              // WDMA for Call Recording
+//FIXME: Check below node numbers again
 #define SOUND_DEVICE_VIRT_FM_RECORD 114  // WDMA for FM Radio Recording
 
 // Sound card 2 device usage
@@ -126,7 +134,7 @@
 /* PCM Configurations */
 // PCM Configurations for Primary Playback Stream
 #define PRIMARY_PLAYBACK_CARD SOUND_CARD0
-#define PRIMARY_PLAYBACK_DEVICE SOUND_DEVICE_ABOX_RDMA6
+#define PRIMARY_PLAYBACK_DEVICE SOUND_DEVICE_VIRT_PRIMARY_PLAYBACK
 
 #define PRIMARY_PLAYBACK_CHANNELS DEFAULT_MEDIA_CHANNELS
 #define PRIMARY_PLAYBACK_SAMPLING_RATE DEFAULT_MEDIA_SAMPLING_RATE
@@ -192,7 +200,7 @@ struct pcm_config pcm_config_low_playback = {
 
 // PCM Configurations for MMAP Playback Stream
 #define MMAP_PLAYBACK_CARD SOUND_CARD0
-#define MMAP_PLAYBACK_DEVICE SOUND_DEVICE_ABOX_RDMA3
+#define MMAP_PLAYBACK_DEVICE SOUND_DEVICE_VIRT_AAUDIO_PLAYBACK
 
 #define MMAP_PLAYBACK_CHANNELS DEFAULT_MEDIA_CHANNELS
 #define MMAP_PLAYBACK_SAMPLING_RATE DEFAULT_MEDIA_SAMPLING_RATE
@@ -268,7 +276,7 @@ struct pcm_config pcm_config_deep_playback_suhqa = {
 
 // PCM Configurations for Voice RX Playback Stream
 #define VRX_PLAYBACK_CARD SOUND_CARD0
-#define VRX_PLAYBACK_DEVICE SOUND_DEVICE_CALL_RX
+#define VRX_PLAYBACK_DEVICE SOUND_DEVICE_VIRT_VRX_PLAYBACK
 
 #define VRX_PLAYBACK_CHANNELS DEFAULT_VOICE_CHANNELS
 #define VRX_PLAYBACK_SAMPLING_RATE DEFAULT_VOICE_SAMPLING_RATE
@@ -312,7 +320,7 @@ struct compr_config compr_config_offload_playback = {
 
 // PCM Configurations for FM Radio Playback Stream
 #define FMRADIO_PLAYBACK_CARD SOUND_CARD0
-#define FMRADIO_PLAYBACK_DEVICE SOUND_DEVICE_ABOX_RDMA3
+#define FMRADIO_PLAYBACK_DEVICE SOUND_DEVICE_VIRT_FM_RMIC_PLAYBACK
 
 #define FMRADIO_PLAYBACK_CHANNELS DEFAULT_MEDIA_CHANNELS
 #define FMRADIO_PLAYBACK_SAMPLING_RATE DEFAULT_MEDIA_SAMPLING_RATE
@@ -376,7 +384,7 @@ struct pcm_config pcm_config_usb_in_loopback = {
 
 // PCM Configurations for Mute Playback Stream
 #define MUTE_PLAYBACK_CARD SOUND_CARD0
-#define MUTE_PLAYBACK_DEVICE SOUND_DEVICE_ABOX_RDMA7
+#define MUTE_PLAYBACK_DEVICE SOUND_DEVICE_VIRT_MUTE_PLAYBACK
 
 #define MUTE_PLAYBACK_CHANNELS DEFAULT_MEDIA_CHANNELS
 #define MUTE_PLAYBACK_SAMPLING_RATE DEFAULT_MEDIA_SAMPLING_RATE
@@ -423,7 +431,7 @@ struct pcm_config pcm_config_aux_playback = {
 // For Capture (MIC) Path
 // PCM Configurations for Primary Capture Stream
 #define PRIMARY_CAPTURE_CARD SOUND_CARD0
-#define PRIMARY_CAPTURE_DEVICE 110
+#define PRIMARY_CAPTURE_DEVICE SOUND_DEVICE_VIRT_PRIMARY_CAPTURE
 
 #define PRIMARY_CAPTURE_CHANNELS DEFAULT_MEDIA_CHANNELS
 #define PRIMARY_CAPTURE_SAMPLING_RATE DEFAULT_MEDIA_SAMPLING_RATE
@@ -466,7 +474,7 @@ struct pcm_config pcm_config_primary_quad_mic_capture = {
 
 // PCM Configurations for Low Latency Capture Stream
 #define LOW_CAPTURE_CARD SOUND_CARD0
-#define LOW_CAPTURE_DEVICE SOUND_DEVICE_ABOX_RDMA9
+#define LOW_CAPTURE_DEVICE SOUND_DEVICE_VIRT_LOWLATENCY_CAPTURE
 
 #define LOW_CAPTURE_CHANNELS DEFAULT_MEDIA_CHANNELS
 #define LOW_CAPTURE_SAMPLING_RATE DEFAULT_MEDIA_SAMPLING_RATE
@@ -488,7 +496,7 @@ struct pcm_config pcm_config_low_capture = {
 
 // PCM Configurations for MMAP Capture Stream
 #define MMAP_CAPTURE_CARD SOUND_CARD0
-#define MMAP_CAPTURE_DEVICE SOUND_DEVICE_ABOX_RDMA9
+#define MMAP_CAPTURE_DEVICE SOUND_DEVICE_VIRT_MMAP_CAPTURE
 
 #define MMAP_CAPTURE_CHANNELS DEFAULT_MEDIA_CHANNELS
 #define MMAP_CAPTURE_SAMPLING_RATE DEFAULT_MEDIA_SAMPLING_RATE
@@ -510,7 +518,7 @@ struct pcm_config pcm_config_mmap_capture = {
 
 // PCM Configurations for Voice TX Capture Stream
 #define VTX_CAPTURE_CARD SOUND_CARD0
-#define VTX_CAPTURE_DEVICE SOUND_DEVICE_CALL_TX
+#define VTX_CAPTURE_DEVICE SOUND_DEVICE_VIRT_VTX_CAPTURE
 
 #define VTX_CAPTURE_CHANNELS DEFAULT_VOICE_CHANNELS
 #define VTX_CAPTURE_SAMPLING_RATE DEFAULT_VOICE_SAMPLING_RATE
