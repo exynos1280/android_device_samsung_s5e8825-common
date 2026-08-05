@@ -277,9 +277,8 @@ static int SoundBooster_init(SoundBoosterEffect* e, effect_config_t* config) {
     e->dsp->setSessionId(e->sessionId);
     e->rotation = 0;
     e->spkMode = 0;
-    /* TODO: Set state = 1 so processing only starts after EFFECT_CMD_ENABLE.
-     * (PATCH #1) */
-    e->state = 2;
+    // Processing only starts after EFFECT_CMD_ENABLE transitions state to 2.
+    e->state = 1;
     return 0;
 }
 
