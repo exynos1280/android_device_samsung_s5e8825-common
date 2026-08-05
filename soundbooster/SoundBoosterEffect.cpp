@@ -194,12 +194,6 @@ static int SoundBooster_process(effect_handle_t self, audio_buffer_t* in, audio_
     if (e->dsp == nullptr) {
         return -EINVAL;
     }
-
-    if (!e->enabled) {
-        // TODO: Passthrough instead of returning early. (PATCH #3)
-        return 0;
-    }
-
     if (in == nullptr || out == nullptr) {
         return -EINVAL;
     }
@@ -210,11 +204,19 @@ static int SoundBooster_process(effect_handle_t self, audio_buffer_t* in, audio_
         return -EINVAL;
     }
 
+    if (!e->enabled) {
+        // Passthrough: device not processed, just copy the input through.
+        if (in->raw != out->raw) {
+            memcpy(out->raw, in->raw, in->frameCount * 8);
+        }
+        return 0;
+    }
+
     e->dsp->process(in->raw, in->raw, in->frameCount, e->logVolume);
 
     if (in->raw != out->raw) {
-        // TODO: Copy frames*8 for float stereo. (PATCH #2)
-        memcpy(out->raw, in->raw, in->frameCount * 4);
+        // Stereo float: 2 channels * 4 bytes per frame.
+        memcpy(out->raw, in->raw, in->frameCount * 8);
     }
     return 0;
 }
