@@ -203,6 +203,14 @@
 /dev/ttyGS2               0660   system     system
 /dev/umts_atc0            0660   system     system
 
+# PM QoS
+/dev/cluster0_freq_min    0664   system     system
+/dev/cluster0_freq_max    0664   system     system
+/dev/cluster1_freq_min    0664   system     system
+/dev/cluster1_freq_max    0664   system     system
+/dev/gpu_freq_min         0664   system     system
+/dev/gpu_freq_max         0664   system     system
+
 # NPU
 /dev/vertex10             0660   system      system
 
