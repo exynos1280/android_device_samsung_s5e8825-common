@@ -244,7 +244,7 @@ struct pcm_config pcm_config_mmap_playback = {
 
 // PCM Configurations for DeepBuffer Playback Stream
 #define DEEP_PLAYBACK_CARD SOUND_CARD0
-#define DEEP_PLAYBACK_DEVICE SOUND_DEVICE_ABOX_RDMA1         // used for rate upto 48KHz
+#define DEEP_PLAYBACK_DEVICE SOUND_DEVICE_ABOX_RDMA0         // used for rate upto 48KHz
 #define DEEP_PLAYBACK_DIRECT_DEVICE SOUND_DEVICE_ABOX_RDMA0  // used for rates above 48KHz
 
 #define DEEP_PLAYBACK_CHANNELS DEFAULT_MEDIA_CHANNELS
