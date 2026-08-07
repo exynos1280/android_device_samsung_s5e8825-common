@@ -117,6 +117,11 @@
                              samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
                 </devicePort>
+                <!-- USB Devices -->
+                <devicePort tagName="USB Device Out" type="AUDIO_DEVICE_OUT_USB_DEVICE" role="sink"/>
+                <devicePort tagName="USB Headset Out" type="AUDIO_DEVICE_OUT_USB_HEADSET" role="sink"/>
+                <devicePort tagName="USB Device In" type="AUDIO_DEVICE_IN_USB_DEVICE" role="source"/>
+                <devicePort tagName="USB Headset In" type="AUDIO_DEVICE_IN_USB_HEADSET" role="source"/>
             </devicePorts>
             <!-- route declaration, i.e. list all available sources for a given sink -->
             <routes>
@@ -134,8 +139,13 @@
                        sources="primary-out,fast,deep_buffer,voip_rx"/>
                 <route type="mix" sink="Bt Sco Car Kit"
                        sources="primary-out,fast,deep_buffer,voip_rx"/>
+                <!-- USB Routes -->
+                <route type="mix" sink="USB Device Out"
+                       sources="primary-out,fast,deep_buffer,voip_rx"/>
+                <route type="mix" sink="USB Headset Out"
+                       sources="primary-out,fast,deep_buffer,voip_rx"/>
                 <route type="mix" sink="primary-in"
-                       sources="Built-In Mic,Wired Headset Mic,Bt Sco Headset Mic,Aux Device In,Voice Call Mic"/>
+                       sources="Built-In Mic,Wired Headset Mic,Bt Sco Headset Mic,Aux Device In,Voice Call Mic,USB Device In,USB Headset In"/>
                 <route type="mix" sink="fm_input" sources="FM Tuner"/>
             </routes>
 
@@ -143,9 +153,6 @@
 
         <!-- Bluetooth Audio HAL -->
         <xi:include href="bluetooth_audio_policy_configuration_7_0.xml"/>
-
-        <!-- Usb Audio HAL -->
-        <xi:include href="usbv2_audio_policy_configuration.xml"/>
 
         <!-- Remote Submix Audio HAL -->
         <xi:include href="r_submix_audio_policy_configuration.xml"/>

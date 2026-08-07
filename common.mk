@@ -37,8 +37,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
     audio.primary.s5e8825 \
-    audio.r_submix.default \
-    audio.usbv2.default
+    audio.r_submix.default
 
 TARGET_EXCLUDES_AUDIOFX := true
 
@@ -51,8 +50,7 @@ $(call soong_config_set_bool,android_hardware_audio,run_64bit,true)
 # Audio - Configuration
 PRODUCT_PACKAGES += \
     audio_effects.xml \
-    audio_policy_configuration.xml \
-    usbv2_audio_policy_configuration.xml
+    audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
@@ -79,7 +77,7 @@ $(call soong_config_set_bool,exynos_audio,use_sec_audio_dynamic_nrec,true)
 $(call soong_config_set_bool,exynos_audio,use_sec_audio_samsungrecord,true)
 $(call soong_config_set_bool,exynos_audio,use_sec_audio_support_gamechat_spk_aec,true)
 $(call soong_config_set_bool,exynos_audio,use_sec_audio_support_listenback_dspeffect,true)
-$(call soong_config_set_bool,exynos_audio,use_usb_offload,false)
+$(call soong_config_set_bool,exynos_audio,use_usb_offload,true)
 
 # Bluetooth
 PRODUCT_PACKAGES += \
