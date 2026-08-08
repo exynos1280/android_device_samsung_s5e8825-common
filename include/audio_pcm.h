@@ -123,7 +123,7 @@
 
 #ifdef SUPPORT_USB_OFFLOAD
 /* Default values for USB Playback or Capture PCM Configuration */
-#define DEFAULT_MEDIA_BITWIDTH 24        // 24bit PCM
+#define DEFAULT_MEDIA_BITWIDTH 32        // 32bit PCM
 #define DEFAULT_WDMA3_MEDIA_BITWIDTH 16  // 16bit PCM
 #define ABOX_UNSUPPORTED_CHANNELS 6
 #define ABOX_SUPPORTED_MAX_CHANNELS 8
