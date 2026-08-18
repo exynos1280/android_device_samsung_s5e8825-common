@@ -163,8 +163,10 @@ PRODUCT_PACKAGES += init.s5e8825.gps.rc
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health-service.s5e8825 \
-    android.hardware.health-service.s5e8825-recovery
+    android.hardware.health-service.samsung \
+    android.hardware.health-service.samsung-recovery
+
+$(call soong_config_set,samsungHealthVars,enable_suspend,false)
 
 # IMS
 PRODUCT_PACKAGES += \
