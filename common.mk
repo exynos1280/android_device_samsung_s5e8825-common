@@ -66,7 +66,8 @@ PRODUCT_COPY_FILES += \
 
 # Audio - Effects
 PRODUCT_PACKAGES += \
-    libsamsungSoundbooster_plus
+    libsamsungSoundbooster_plus \
+    SoundBoosterStage
 
 # Audio - Init
 PRODUCT_PACKAGES += init.s5e8825.audio.rc
