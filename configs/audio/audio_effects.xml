@@ -93,20 +93,6 @@
             <apply effect="ns"/>
         </stream>
     </preprocess>
-    <postprocess>
-        <stream type="music">
-            <apply effect="soundbooster_plus"/>
-            <apply effect="soundalive"/>
-        </stream>
-        <stream type="ring">
-            <apply effect="soundbooster_plus"/>
-            <apply effect="soundalive"/>
-        </stream>
-        <stream type="alarm">
-            <apply effect="soundbooster_plus"/>
-            <apply effect="soundalive"/>
-        </stream>
-    </postprocess>
     <!-- Audio post processor configurations.
          The post processor configuration is described in a "postprocess" element and consists in a
          list of elements each describing post processor settings for a given use case or "stream".
