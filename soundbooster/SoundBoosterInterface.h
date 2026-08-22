@@ -61,13 +61,13 @@ class SoundBooster_Interface_Factory {
         typedef SoundBooster_Interface_IF* (*CreateFn1)(int);
 
         CreateFn2 fn2 = reinterpret_cast<CreateFn2>(
-            dlsym(RTLD_DEFAULT, "_ZN30SoundBooster_Interface_Factory6CreateEii"));
+                dlsym(RTLD_DEFAULT, "_ZN30SoundBooster_Interface_Factory6CreateEii"));
         if (fn2 != nullptr) {
             return fn2(mode, fmFlag);
         }
 
         CreateFn1 fn1 = reinterpret_cast<CreateFn1>(
-            dlsym(RTLD_DEFAULT, "_ZN30SoundBooster_Interface_Factory6CreateEi"));
+                dlsym(RTLD_DEFAULT, "_ZN30SoundBooster_Interface_Factory6CreateEi"));
         if (fn1 != nullptr) {
             return fn1(mode);
         }
@@ -79,7 +79,8 @@ class SoundBooster_Interface_Factory {
     static inline void Destroy(SoundBooster_Interface_IF* interface) {
         typedef void (*DestroyFn)(SoundBooster_Interface_IF*);
         DestroyFn fnDestroy = reinterpret_cast<DestroyFn>(
-            dlsym(RTLD_DEFAULT, "_ZN30SoundBooster_Interface_Factory7DestroyEP24SoundBooster_Interface_IF"));
+                dlsym(RTLD_DEFAULT,
+                      "_ZN30SoundBooster_Interface_Factory7DestroyEP24SoundBooster_Interface_IF"));
         if (fnDestroy != nullptr) {
             fnDestroy(interface);
         }
