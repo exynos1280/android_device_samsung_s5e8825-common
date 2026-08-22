@@ -54,7 +54,7 @@ ro.surface_flinger.use_color_management=true
 fs_mgr.overlayfs.prefer_cache_backing_storage=true
 
 # Graphics
-debug.renderengine.backend=skiavkthreaded
+debug.renderengine.backend=skiavk
 debug.sf.auto_latch_unsignaled=0
 debug.sf.enable_transaction_tracing=false
 debug.sf.latch_unsignaled=0
